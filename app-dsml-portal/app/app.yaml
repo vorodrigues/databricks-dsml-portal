@@ -1,0 +1,13 @@
+# Runtime manifest of the built app (./build): the backend is a single bundled file,
+# so the Apps runtime starts it directly without installing packages.
+command: ["node", "server/server.mjs"]
+
+env:
+  # Secrets declared as app resources
+  - name: GITHUB_TOKEN
+    valueFrom: github-token
+  - name: MLOPS_SP_CLIENT_ID
+    valueFrom: sp-client-id
+  - name: MLOPS_SP_CLIENT_SECRET
+    valueFrom: sp-client-secret
+  # PGHOST, PGPORT, PGDATABASE, PGUSER and PGSSLMODE are injected by the database resource

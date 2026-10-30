@@ -1,0 +1,47 @@
+{
+  "source": "databricks serving-endpoints get prod_fraud_serving (data-plane URL omitted)",
+  "name": "prod_fraud_serving",
+  "id": "76b33e805f8641008c7541b8e43a1e2e",
+  "state": {
+    "config_update": "NOT_UPDATING",
+    "ready": "READY"
+  },
+  "route_optimized": true,
+  "creator": "6036593a-f1b6-49ee-aa6d-145161164de9",
+  "creation_timestamp": "2026-10-30T03:32:17Z",
+  "config": {
+    "served_entities": [
+      {
+        "name": "fraud-model",
+        "entity_name": "vr_workspace.tech_bar.tech_bar_fraud_model",
+        "entity_version": "1",
+        "workload_size": "Small",
+        "scale_to_zero_enabled": true,
+        "state": {
+          "deployment": "DEPLOYMENT_READY",
+          "deployment_state_message": ""
+        }
+      }
+    ],
+    "traffic_config": {
+      "routes": [
+        {
+          "served_entity_name": "fraud-model",
+          "served_model_name": "fraud-model",
+          "traffic_percentage": 100
+        }
+      ]
+    }
+  },
+  "ai_gateway": {
+    "inference_table_config": {
+      "catalog_name": "vr_workspace",
+      "enabled": true,
+      "schema_name": "tech_bar",
+      "table_name_prefix": "fraud_serving_inference"
+    },
+    "usage_tracking_config": {
+      "enabled": false
+    }
+  }
+}

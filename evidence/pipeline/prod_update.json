@@ -1,0 +1,41 @@
+{
+  "source": "databricks pipelines get 84f23740-51d0-4c92-a41f-ef1713e45309; databricks pipelines get-update <pipeline_id> <update_id>",
+  "pipeline": {
+    "pipeline_id": "84f23740-51d0-4c92-a41f-ef1713e45309",
+    "name": "prod_fraud_ingest",
+    "state": "IDLE",
+    "run_as_user_name": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "spec": {
+      "catalog": "vr_workspace",
+      "schema": "tech_bar",
+      "serverless": true,
+      "continuous": false,
+      "channel": "CURRENT",
+      "configuration": {
+        "landing": "/Volumes/vr_workspace/tech_bar/landing"
+      },
+      "libraries": [
+        {
+          "file": {
+            "path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/setup/pipelines/ingest.py"
+          }
+        }
+      ]
+    },
+    "latest_updates": [
+      {
+        "creation_time": "2026-10-30T03:21:29.478Z",
+        "state": "COMPLETED",
+        "update_id": "b65cf9a4-1f08-4547-a0c4-47c4767b36a9"
+      }
+    ]
+  },
+  "update": {
+    "update_id": "b65cf9a4-1f08-4547-a0c4-47c4767b36a9",
+    "state": "COMPLETED",
+    "cause": "JOB_TASK",
+    "full_refresh": false,
+    "mode": "DEFAULT",
+    "creation_time": "2026-10-30T03:21:29Z"
+  }
+}

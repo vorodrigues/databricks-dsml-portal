@@ -1,0 +1,25 @@
+{
+  "source": "AI Gateway inference table of prod_fraud_serving, queried on the Serverless SQL warehouse 854312e54074c4f7",
+  "sql": "SELECT request_date, request_time, status_code, execution_duration_ms, served_entity_id, request, response FROM vr_workspace.tech_bar.fraud_serving_inference_payload ORDER BY request_time",
+  "state": "SUCCEEDED",
+  "columns": [
+    "request_date",
+    "request_time",
+    "status_code",
+    "execution_duration_ms",
+    "served_entity_id",
+    "request",
+    "response"
+  ],
+  "rows": [
+    [
+      "2026-10-30",
+      "2026-10-30T03:43:25.873Z",
+      "200",
+      "15",
+      "69827b41816846b89e02211ab3bc0fab",
+      "{\"dataframe_records\": [{\"holder_id\": \"H0026806432\", \"created_at_brt\": \"2026-10-28T23:59:58\", \"amount\": 68.24}, {\"holder_id\": \"H5162324024\", \"created_at_brt\": \"2026-10-28T23:59:54\", \"amount\": 15000.0}]}",
+      "{\"predictions\":[1,1]}"
+    ]
+  ]
+}

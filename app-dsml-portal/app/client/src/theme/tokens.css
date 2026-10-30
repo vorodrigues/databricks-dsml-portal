@@ -1,0 +1,67 @@
+/*
+ * Design tokens of the Databricks workspace design system ("du Bois", dark theme),
+ * taken from the workspace --db-* CSS variables and computed colors.
+ * Single source of truth for the app look and feel.
+ */
+:root {
+  /* Typography */
+  --font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-size-xs: 0.6875rem; /* 11px */
+  --font-size-sm: 0.75rem;   /* 12px */
+  --font-size-base: 0.8125rem; /* 13px, workspace base */
+  --font-size-md: 0.875rem;  /* 14px */
+  --font-size-lg: 0.9375rem; /* 15px */
+  --font-size-xl: 1rem;      /* 16px */
+  --font-size-2xl: 1.25rem;  /* 20px */
+  --font-size-3xl: 1.5rem;   /* 24px */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Surfaces / backgrounds (dark theme) */
+  --bg-base: #11171c;        /* main background */
+  --bg-secondary: #1f272d;   /* raised surfaces / lines */
+  --surface-hover: #bdcddb0a;
+  --nav-active-surface: #8acaff14;
+  --nav-active-text: #8acaff;
+
+  /* Text */
+  --text-primary: #e8ecf0;
+  --text-secondary: #92a4b3;
+  --text-disabled: #5f7281;
+
+  /* Borders */
+  --border-base: #1f272d;
+  --border-tabs: #37444f;
+  --border-strong: #37444f;
+
+  /* Accent (action blue / active tab underline) */
+  --accent: #4299e0;
+  --accent-hover: #8acaff;
+  --accent-press: #2272b4;
+
+  /* Semantic */
+  --danger: #ff4949;
+  --positive: #3ba65e;
+  --warning: #facb66;
+
+  /* Spacing (4px base unit, as in du Bois) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Shell dimensions */
+  --header-height: 48px;
+  --sidebar-width: 220px;
+  --sidebar-width-collapsed: 56px;
+}

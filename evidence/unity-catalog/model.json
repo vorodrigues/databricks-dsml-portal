@@ -1,0 +1,77 @@
+{
+  "source": "databricks registered-models get --include-aliases; databricks model-versions list/get; GET /api/2.0/mlflow/unity-catalog/registered-models/get and model-versions/get (tags); databricks tag-policies list-tag-policies (governed tags)",
+  "registered_model": {
+    "full_name": "vr_workspace.tech_bar.tech_bar_fraud_model",
+    "comment": "PIX transaction fraud detection model",
+    "owner": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "created_by": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "created_at": "2026-10-30T03:19:56Z",
+    "aliases": [
+      {
+        "alias_name": "champion",
+        "id": "89898363-0d89-46ca-a40a-ef629d5907ff",
+        "version_num": 1
+      }
+    ],
+    "tags": [
+      {
+        "key": "confidentiality",
+        "value": "confidential"
+      },
+      {
+        "key": "retention",
+        "value": "365d"
+      },
+      {
+        "key": "team",
+        "value": "fraud"
+      }
+    ]
+  },
+  "versions": [
+    {
+      "version": 1,
+      "status": "READY",
+      "run_id": "33532c22d9b442d4b0c1dbf74bb2eccc",
+      "source": "dbfs:/databricks/mlflow-tracking/3012879594899005/33532c22d9b442d4b0c1dbf74bb2eccc/artifacts/model",
+      "created_by": "6036593a-f1b6-49ee-aa6d-145161164de9",
+      "created_at": "2026-10-30T03:29:02Z",
+      "aliases": [
+        {
+          "alias_name": "champion",
+          "id": "89898363-0d89-46ca-a40a-ef629d5907ff",
+          "version_num": 1
+        }
+      ],
+      "tags": [
+        {
+          "key": "retention",
+          "value": "365d"
+        },
+        {
+          "key": "team",
+          "value": "fraud"
+        }
+      ]
+    }
+  ],
+  "governed_tag_policies": [
+    {
+      "tag_key": "confidentiality",
+      "values": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ]
+    },
+    {
+      "tag_key": "team",
+      "values": [
+        "ml-team",
+        "fraud",
+        "data-engineer"
+      ]
+    }
+  ]
+}

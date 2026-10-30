@@ -1,0 +1,31 @@
+{
+  "name": "dsml-portal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSML Portal: create and track ML projects",
+  "scripts": {
+    "dev": "vite",
+    "build": "node build.mjs",
+    "start": "node build/server/server.mjs",
+    "start:dev": "node server/server.js",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "blakejs": "^1.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.23.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  }
+}

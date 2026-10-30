@@ -1,0 +1,45 @@
+# databricks pipelines list-pipeline-events 84f23740-51d0-4c92-a41f-ef1713e45309 (prod_fraud_ingest, update b65cf9a4-1f08-4547-a0c4-47c4767b36a9), oldest first
+2026-10-30T03:19:58.378Z	user_action	INFO	User 6036593a-f1b6-49ee-aa6d-145161164de9 created pipeline.
+2026-10-30T03:21:29.470Z	user_action	INFO	Principal '6036593a-f1b6-49ee-aa6d-145161164de9' started an update.
+2026-10-30T03:21:29.478Z	create_update	INFO	Update b65cf9 started by JOB_TASK.
+2026-10-30T03:21:30.388Z	update_progress	INFO	Update b65cf9 is WAITING_FOR_RESOURCES.
+2026-10-30T03:21:33.775Z	runtime_details	INFO	Resolved runtime environment details for update b65cf9.
+2026-10-30T03:21:41.650Z	update_progress	INFO	Update b65cf9 is INITIALIZING.
+2026-10-30T03:22:04.993Z	update_progress	INFO	Update b65cf9 is SETTING_UP_TABLES.
+2026-10-30T03:22:05.327Z	dataset_life_cycle	INFO	Streaming Table `vr_workspace`.`tech_bar`.`bronze_fraud_labels` has been created.
+2026-10-30T03:22:05.420Z	dataset_life_cycle	INFO	Streaming Table `vr_workspace`.`tech_bar`.`bronze_pix_transactions` has been created.
+2026-10-30T03:22:10.880Z	flow_definition	INFO	Flow `vr_workspace`.`tech_bar`.`bronze_fraud_labels` defined as APPEND.
+2026-10-30T03:22:10.909Z	flow_definition	INFO	Flow `vr_workspace`.`tech_bar`.`bronze_pix_transactions` defined as APPEND.
+2026-10-30T03:22:10.921Z	flow_definition	INFO	Flow `vr_workspace`.`tech_bar`.`raw_fraud_labels` defined as MATERIALIZED_VIEW.
+2026-10-30T03:22:10.928Z	flow_definition	INFO	Flow `vr_workspace`.`tech_bar`.`raw_pix_transactions` defined as MATERIALIZED_VIEW.
+2026-10-30T03:22:10.948Z	dataset_definition	INFO	Dataset `vr_workspace`.`tech_bar`.`bronze_fraud_labels` defined as STREAMING_TABLE.
+2026-10-30T03:22:10.969Z	dataset_definition	INFO	Dataset `vr_workspace`.`tech_bar`.`bronze_pix_transactions` defined as STREAMING_TABLE.
+2026-10-30T03:22:10.980Z	dataset_definition	INFO	Dataset `vr_workspace`.`tech_bar`.`raw_fraud_labels` defined as MATERIALIZED_VIEW.
+2026-10-30T03:22:11.000Z	dataset_definition	INFO	Dataset `vr_workspace`.`tech_bar`.`raw_pix_transactions` defined as MATERIALIZED_VIEW.
+2026-10-30T03:22:11.073Z	graph_created	INFO	Dataflow graph successfully loaded.
+2026-10-30T03:22:11.079Z	update_progress	INFO	Update b65cf9 is RUNNING.
+2026-10-30T03:22:11.094Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_fraud_labels' is QUEUED.
+2026-10-30T03:22:11.100Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' is QUEUED.
+2026-10-30T03:22:11.101Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' is QUEUED.
+2026-10-30T03:22:11.103Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_pix_transactions' is QUEUED.
+2026-10-30T03:22:11.248Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_pix_transactions' is STARTING.
+2026-10-30T03:22:13.145Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_pix_transactions' is RUNNING.
+2026-10-30T03:22:13.264Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_fraud_labels' is STARTING.
+2026-10-30T03:22:14.188Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_fraud_labels' is RUNNING.
+2026-10-30T03:22:21.691Z	flow_progress	INFO	Completed a streaming update of 'vr_workspace.tech_bar.bronze_fraud_labels'.
+2026-10-30T03:22:21.905Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_fraud_labels' has COMPLETED.
+2026-10-30T03:22:21.912Z	flow_progress	INFO	Completed a streaming update of 'vr_workspace.tech_bar.bronze_pix_transactions'.
+2026-10-30T03:22:21.919Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.bronze_pix_transactions' has COMPLETED.
+2026-10-30T03:22:21.935Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' is PLANNING.
+2026-10-30T03:22:23.154Z	planning_information	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' has been planned to be executed as COMPLETE_RECOMPUTE.
+2026-10-30T03:22:23.173Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' is STARTING.
+2026-10-30T03:22:23.206Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' is RUNNING.
+2026-10-30T03:22:24.186Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' is PLANNING.
+2026-10-30T03:22:24.720Z	planning_information	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' has been planned to be executed as COMPLETE_RECOMPUTE.
+2026-10-30T03:22:24.723Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' is STARTING.
+2026-10-30T03:22:24.826Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' is RUNNING.
+2026-10-30T03:22:27.451Z	dataset_life_cycle	INFO	Materialized View `vr_workspace`.`tech_bar`.`raw_fraud_labels` has been created.
+2026-10-30T03:22:27.495Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_fraud_labels' has COMPLETED.
+2026-10-30T03:22:29.636Z	dataset_life_cycle	INFO	Materialized View `vr_workspace`.`tech_bar`.`raw_pix_transactions` has been created.
+2026-10-30T03:22:29.679Z	flow_progress	INFO	Flow 'vr_workspace.tech_bar.raw_pix_transactions' has COMPLETED.
+2026-10-30T03:22:29.722Z	update_progress	INFO	Update b65cf9 is COMPLETED.

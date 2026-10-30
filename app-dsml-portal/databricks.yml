@@ -1,0 +1,32 @@
+# DSML Portal: Databricks App that creates and tracks ML projects.
+bundle:
+  name: dsml_portal
+
+include:
+  - resources/*.yml
+
+# Only the built app (app/build, produced by `npm run build`) is uploaded.
+sync:
+  include:
+    - app/build/**
+  exclude:
+    - .design-refs
+    - scripts
+    - app/*
+    - "!app/build"
+
+variables:
+  lakebase_branch:
+    description: Lakebase project branch that hosts the portal catalog
+    default: projects/feature-store-online/branches/production
+  lakebase_database:
+    description: Lakebase database resource of the portal catalog (`databricks postgres list-databases <branch>`)
+    default: projects/feature-store-online/branches/production/databases/db-c8j6-0ndxcy5qf7
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-963f3995-3da2.cloud.databricks.com
+      root_path: /Workspace/Users/victor.rodrigues@databricks.com/tech_bar/.bundle/${bundle.name}/${bundle.target}

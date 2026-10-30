@@ -1,0 +1,81 @@
+{
+  "source": "databricks postgres get-project / list-databases; GET /api/2.0/feature-store/online-stores/feature-store-online; databricks tables get; SQL on the Serverless SQL warehouse 854312e54074c4f7",
+  "lakebase_project": {
+    "name": "projects/feature-store-online",
+    "uid": "cb11857c-94c7-43ef-8858-a6aa44562ecd",
+    "display_name": "feature-store-online",
+    "pg_version": 16,
+    "create_time": "2026-10-30T01:30:29Z"
+  },
+  "databases": [
+    {
+      "name": "projects/feature-store-online/branches/production/databases/databricks-postgres",
+      "postgres_database": "databricks_postgres"
+    },
+    {
+      "name": "projects/feature-store-online/branches/production/databases/db-c8j6-0ndxcy5qf7",
+      "postgres_database": "dsml_portal"
+    },
+    {
+      "name": "projects/feature-store-online/branches/production/databases/db-j9he-qxmjaq1hg0",
+      "postgres_database": "vr_workspace"
+    }
+  ],
+  "online_store": {
+    "capacity": "CU_1",
+    "creation_time": "2026-10-30T01:30:29Z",
+    "creator": "victor.rodrigues@databricks.com",
+    "name": "feature-store-online",
+    "read_replica_count": 0,
+    "state": "AVAILABLE"
+  },
+  "online_feature_table": {
+    "full_name": "vr_workspace.tech_bar.batch_pix_features_online_gct6b4",
+    "table_type": "FOREIGN",
+    "data_source_format": "POSTGRESQL_FORMAT",
+    "owner": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "columns": [
+      {
+        "name": "holder_id",
+        "type_name": "STRING"
+      },
+      {
+        "name": "batch_pix_amount_7d",
+        "type_name": "DOUBLE"
+      },
+      {
+        "name": "batch_pix_transfers_30d",
+        "type_name": "LONG"
+      },
+      {
+        "name": "batch_pix_transfers_1d",
+        "type_name": "LONG"
+      },
+      {
+        "name": "batch_pix_amount_1d",
+        "type_name": "DOUBLE"
+      },
+      {
+        "name": "batch_pix_amount_30d",
+        "type_name": "DOUBLE"
+      },
+      {
+        "name": "batch_pix_transfers_7d",
+        "type_name": "LONG"
+      }
+    ],
+    "database_project_id": "cb11857c-94c7-43ef-8858-a6aa44562ecd"
+  },
+  "online_feature_rows": {
+    "sql": "SELECT count(*) AS rows FROM vr_workspace.tech_bar.batch_pix_features_online_gct6b4",
+    "state": "SUCCEEDED",
+    "columns": [
+      "rows"
+    ],
+    "rows": [
+      [
+        "10000"
+      ]
+    ]
+  }
+}

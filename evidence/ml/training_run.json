@@ -1,0 +1,80 @@
+{
+  "source": "databricks experiments get-run 33532c22d9b442d4b0c1dbf74bb2eccc (run registered as version 1 of vr_workspace.tech_bar.tech_bar_fraud_model, alias champion)",
+  "experiment": {
+    "name": "/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/tech_bar_fraud_experiment",
+    "experiment_id": "3012879594899005"
+  },
+  "run": {
+    "run_id": "33532c22d9b442d4b0c1dbf74bb2eccc",
+    "run_name": "final_model",
+    "status": "FINISHED",
+    "start_time": "2026-10-30T03:28:25Z",
+    "end_time": "2026-10-30T03:28:35Z",
+    "metrics": [
+      {
+        "key": "test_auc",
+        "value": 0.6960996351835935
+      }
+    ],
+    "params": [
+      {
+        "key": "colsample_bytree",
+        "value": "0.8950326994698486"
+      },
+      {
+        "key": "learning_rate",
+        "value": "0.029205154075718963"
+      },
+      {
+        "key": "max_depth",
+        "value": "4"
+      },
+      {
+        "key": "min_child_weight",
+        "value": "8"
+      },
+      {
+        "key": "scale_pos_weight",
+        "value": "21.476383464149286"
+      },
+      {
+        "key": "subsample",
+        "value": "0.6257147453238197"
+      }
+    ],
+    "tags": [
+      {
+        "key": "mlflow.databricks.jobID",
+        "value": "343968601521557"
+      },
+      {
+        "key": "mlflow.databricks.jobRunID",
+        "value": "182102771012835"
+      },
+      {
+        "key": "mlflow.databricks.jobType",
+        "value": "notebook"
+      },
+      {
+        "key": "mlflow.databricks.notebookPath",
+        "value": "/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/train"
+      },
+      {
+        "key": "mlflow.runName",
+        "value": "final_model"
+      },
+      {
+        "key": "mlflow.source.name",
+        "value": "jobs/343968601521557/run/182102771012835"
+      },
+      {
+        "key": "retention",
+        "value": "365d"
+      },
+      {
+        "key": "team",
+        "value": "fraud"
+      }
+    ]
+  }
+}

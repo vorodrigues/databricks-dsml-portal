@@ -1,0 +1,39 @@
+resources:
+  apps:
+    dsml_portal:
+      name: dsml-portal
+      description: Create and track ML projects from project templates
+      source_code_path: ../app/build
+
+      # Resources read with the app identity (service principal)
+      resources:
+        - name: github-token
+          description: GitHub token used for every GitHub API call
+          secret:
+            scope: dsml-portal
+            key: github-token
+            permission: READ
+        - name: sp-client-id
+          description: Client ID of the CI/CD service principal
+          secret:
+            scope: mlops
+            key: sp-client-id
+            permission: READ
+        - name: sp-client-secret
+          description: Client secret of the CI/CD service principal
+          secret:
+            scope: mlops
+            key: sp-client-secret
+            permission: READ
+        - name: database
+          description: Portal catalog (Lakebase)
+          postgres:
+            branch: ${var.lakebase_branch}
+            database: ${var.lakebase_database}
+            permission: CAN_CONNECT_AND_CREATE
+
+      # Scopes of the user token forwarded to the app (on-behalf-of-user)
+      user_api_scopes:
+        - catalog.catalogs:read
+        - catalog.schemas:read
+        - postgres

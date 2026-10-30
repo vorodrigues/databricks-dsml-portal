@@ -1,0 +1,435 @@
+{
+  "source": "Portal REST API (https://dsml-portal-7474655075961307.aws.databricksapps.com), called with the user OAuth token; responses as returned (HTTP 200)",
+  "GET /api/projects": [
+    {
+      "name": "databricks-tech-bar-fraud-project",
+      "template": "Classification",
+      "repo": "vorodrigues/databricks-tech-bar-fraud-project",
+      "repoUrl": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project",
+      "visibility": "public",
+      "description": null,
+      "creator": "victor.rodrigues@databricks.com",
+      "createdAt": "2026-10-30T03:01:22.546Z",
+      "updatedAt": "2026-10-30T03:01:37.522Z",
+      "modified": "2026-10-30T03:19:43Z",
+      "pendingApprovals": 0,
+      "pendingPulls": 0,
+      "modelApprovals": [],
+      "status": "ready",
+      "error": null,
+      "params": {
+        "catalog": "vr_workspace",
+        "dev_user": "victor.rodrigues@databricks.com",
+        "model_name": "tech_bar_fraud_model",
+        "schema_dev": "tech_bar_dev",
+        "bundle_name": "databricks_tech_bar_fraud_project",
+        "schema_prod": "tech_bar",
+        "online_store": "feature-store-online",
+        "root_path_dev": "/Workspace/Users/victor.rodrigues@databricks.com/databricks-tech-bar-fraud-project/dev",
+        "viewers_group": "ml-viewers",
+        "root_path_prod": "/Workspace/databricks-tech-bar-fraud-project/prod",
+        "schema_staging": "tech_bar_staging",
+        "workspace_host": "https://dbc-963f3995-3da2.cloud.databricks.com",
+        "experiment_name": "tech_bar_fraud_experiment",
+        "root_path_staging": "/Workspace/databricks-tech-bar-fraud-project/staging",
+        "service_principal": "6036593a-f1b6-49ee-aa6d-145161164de9"
+      },
+      "prodModel": "vr_workspace.tech_bar.tech_bar_fraud_model"
+    }
+  ],
+  "GET /api/projects/databricks-tech-bar-fraud-project": {
+    "name": "databricks-tech-bar-fraud-project",
+    "template": "Classification",
+    "repo": "vorodrigues/databricks-tech-bar-fraud-project",
+    "repoUrl": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project",
+    "visibility": "public",
+    "description": null,
+    "creator": "victor.rodrigues@databricks.com",
+    "createdAt": "2026-10-30T03:01:22.546Z",
+    "updatedAt": "2026-10-30T03:01:37.522Z",
+    "modified": "2026-10-30T03:19:43Z",
+    "pendingApprovals": 0,
+    "pendingPulls": 0,
+    "modelApprovals": [],
+    "pullRequests": [],
+    "status": "ready",
+    "error": null,
+    "params": {
+      "catalog": "vr_workspace",
+      "dev_user": "victor.rodrigues@databricks.com",
+      "model_name": "tech_bar_fraud_model",
+      "schema_dev": "tech_bar_dev",
+      "bundle_name": "databricks_tech_bar_fraud_project",
+      "schema_prod": "tech_bar",
+      "online_store": "feature-store-online",
+      "root_path_dev": "/Workspace/Users/victor.rodrigues@databricks.com/databricks-tech-bar-fraud-project/dev",
+      "viewers_group": "ml-viewers",
+      "root_path_prod": "/Workspace/databricks-tech-bar-fraud-project/prod",
+      "schema_staging": "tech_bar_staging",
+      "workspace_host": "https://dbc-963f3995-3da2.cloud.databricks.com",
+      "experiment_name": "tech_bar_fraud_experiment",
+      "root_path_staging": "/Workspace/databricks-tech-bar-fraud-project/staging",
+      "service_principal": "6036593a-f1b6-49ee-aa6d-145161164de9"
+    },
+    "prodModel": "vr_workspace.tech_bar.tech_bar_fraud_model"
+  },
+  "GET /api/projects/databricks-tech-bar-fraud-project/repository": {
+    "repo": "vorodrigues/databricks-tech-bar-fraud-project",
+    "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project",
+    "branch": "main",
+    "truncated": false,
+    "entries": [
+      {
+        "path": ".github",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/.github"
+      },
+      {
+        "path": ".github/workflows",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/.github/workflows"
+      },
+      {
+        "path": ".github/workflows/cd.yml",
+        "isDir": false,
+        "size": 878,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/.github/workflows/cd.yml"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "isDir": false,
+        "size": 1052,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/.github/workflows/ci.yml"
+      },
+      {
+        "path": ".gitignore",
+        "isDir": false,
+        "size": 9,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/.gitignore"
+      },
+      {
+        "path": "README.md",
+        "isDir": false,
+        "size": 6116,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/README.md"
+      },
+      {
+        "path": "databricks.yml",
+        "isDir": false,
+        "size": 1773,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/databricks.yml"
+      },
+      {
+        "path": "resources",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/resources"
+      },
+      {
+        "path": "resources/batch-scoring-workflow-resource.yml",
+        "isDir": false,
+        "size": 1278,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/batch-scoring-workflow-resource.yml"
+      },
+      {
+        "path": "resources/ingest-pipeline-resource.yml",
+        "isDir": false,
+        "size": 760,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/ingest-pipeline-resource.yml"
+      },
+      {
+        "path": "resources/ml-artifacts-resource.yml",
+        "isDir": false,
+        "size": 385,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/ml-artifacts-resource.yml"
+      },
+      {
+        "path": "resources/online-deploy-workflow-resource.yml",
+        "isDir": false,
+        "size": 1003,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/online-deploy-workflow-resource.yml"
+      },
+      {
+        "path": "resources/setup-workflow-resource.yml",
+        "isDir": false,
+        "size": 1595,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/setup-workflow-resource.yml"
+      },
+      {
+        "path": "resources/training-workflow-resource.yml",
+        "isDir": false,
+        "size": 2826,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/resources/training-workflow-resource.yml"
+      },
+      {
+        "path": "scoring",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/scoring"
+      },
+      {
+        "path": "scoring/notebooks",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/scoring/notebooks"
+      },
+      {
+        "path": "scoring/notebooks/batch_scoring.py",
+        "isDir": false,
+        "size": 3393,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/scoring/notebooks/batch_scoring.py"
+      },
+      {
+        "path": "serving",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/serving"
+      },
+      {
+        "path": "serving/notebooks",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/serving/notebooks"
+      },
+      {
+        "path": "serving/notebooks/online_deploy.py",
+        "isDir": false,
+        "size": 7338,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/serving/notebooks/online_deploy.py"
+      },
+      {
+        "path": "setup",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/setup"
+      },
+      {
+        "path": "setup/notebooks",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/setup/notebooks"
+      },
+      {
+        "path": "setup/notebooks/data.py",
+        "isDir": false,
+        "size": 4516,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/setup/notebooks/data.py"
+      },
+      {
+        "path": "setup/notebooks/online_store.py",
+        "isDir": false,
+        "size": 3310,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/setup/notebooks/online_store.py"
+      },
+      {
+        "path": "setup/notebooks/tag_policy.py",
+        "isDir": false,
+        "size": 4486,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/setup/notebooks/tag_policy.py"
+      },
+      {
+        "path": "setup/pipelines",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/setup/pipelines"
+      },
+      {
+        "path": "setup/pipelines/ingest.py",
+        "isDir": false,
+        "size": 2575,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/setup/pipelines/ingest.py"
+      },
+      {
+        "path": "training",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/training"
+      },
+      {
+        "path": "training/notebooks",
+        "isDir": true,
+        "size": null,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/tree/main/training/notebooks"
+      },
+      {
+        "path": "training/notebooks/feature_batch.py",
+        "isDir": false,
+        "size": 5678,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/training/notebooks/feature_batch.py"
+      },
+      {
+        "path": "training/notebooks/feature_ondemand.py",
+        "isDir": false,
+        "size": 3007,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/training/notebooks/feature_ondemand.py"
+      },
+      {
+        "path": "training/notebooks/register.py",
+        "isDir": false,
+        "size": 3289,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/training/notebooks/register.py"
+      },
+      {
+        "path": "training/notebooks/train.py",
+        "isDir": false,
+        "size": 7421,
+        "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/blob/main/training/notebooks/train.py"
+      }
+    ]
+  },
+  "GET /api/projects/databricks-tech-bar-fraud-project/model": {
+    "workspaceHost": "https://dbc-963f3995-3da2.cloud.databricks.com",
+    "prodModel": "vr_workspace.tech_bar.tech_bar_fraud_model",
+    "alias": "champion",
+    "model": {
+      "name": "vr_workspace.tech_bar.tech_bar_fraud_model",
+      "version": "1",
+      "catalog": "vr_workspace",
+      "schema": "tech_bar",
+      "modelName": "tech_bar_fraud_model"
+    },
+    "experiment": {
+      "id": "3012879594899005",
+      "name": "/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/tech_bar_fraud_experiment"
+    },
+    "run": {
+      "info": {
+        "run_id": "33532c22d9b442d4b0c1dbf74bb2eccc",
+        "run_uuid": "33532c22d9b442d4b0c1dbf74bb2eccc",
+        "experiment_id": "3012879594899005",
+        "run_name": "final_model",
+        "status": "FINISHED",
+        "start_time": 1793330905976,
+        "end_time": 1793330915591,
+        "artifact_uri": "dbfs:/databricks/mlflow-tracking/3012879594899005/33532c22d9b442d4b0c1dbf74bb2eccc/artifacts",
+        "lifecycle_stage": "active"
+      },
+      "metrics": [
+        {
+          "key": "test_auc",
+          "latest": 0.6960996351835935,
+          "min": 0.6960996351835935,
+          "max": 0.6960996351835935
+        }
+      ],
+      "params": [
+        {
+          "key": "colsample_bytree",
+          "value": "0.8950326994698486"
+        },
+        {
+          "key": "learning_rate",
+          "value": "0.029205154075718963"
+        },
+        {
+          "key": "max_depth",
+          "value": "4"
+        },
+        {
+          "key": "min_child_weight",
+          "value": "8"
+        },
+        {
+          "key": "scale_pos_weight",
+          "value": "21.476383464149286"
+        },
+        {
+          "key": "subsample",
+          "value": "0.6257147453238197"
+        }
+      ],
+      "tags": [
+        {
+          "key": "mlflow.databricks.cluster.id",
+          "value": "1030-032308-j14v3yxf-v2n"
+        },
+        {
+          "key": "mlflow.databricks.cluster.info",
+          "value": "{\"cluster_name\":\"\",\"spark_version\":\"client.3.6-aarch64-scala2.12\",\"autotermination_minutes\":120}"
+        },
+        {
+          "key": "mlflow.databricks.cluster.libraries",
+          "value": "{\"installable\":[],\"redacted\":[]}"
+        },
+        {
+          "key": "mlflow.databricks.jobID",
+          "value": "343968601521557"
+        },
+        {
+          "key": "mlflow.databricks.jobRunID",
+          "value": "182102771012835"
+        },
+        {
+          "key": "mlflow.databricks.jobType",
+          "value": "notebook"
+        },
+        {
+          "key": "mlflow.databricks.notebook.commandID",
+          "value": "1793330592372_8314567495847580815_job-343968601521557-run-182102771012835-action-1572811583121811"
+        },
+        {
+          "key": "mlflow.databricks.notebookID",
+          "value": "3012879594898999"
+        },
+        {
+          "key": "mlflow.databricks.notebookPath",
+          "value": "/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/train"
+        },
+        {
+          "key": "mlflow.databricks.notebookRevisionID",
+          "value": "1793330915685"
+        },
+        {
+          "key": "mlflow.databricks.webappURL",
+          "value": "https://dbc-963f3995-3da2.cloud.databricks.com"
+        },
+        {
+          "key": "mlflow.databricks.workspaceID",
+          "value": "7474655075961307"
+        },
+        {
+          "key": "mlflow.databricks.workspaceURL",
+          "value": "https://dbc-963f3995-3da2.cloud.databricks.com"
+        },
+        {
+          "key": "mlflow.log-model.history",
+          "value": "[{\"artifact_path\":\"model\",\"flavors\":{\"python_function\":{\"data\":\"data/feature_store\",\"code\":null,\"loader_module\":\"databricks.feature_store.mlflow_model\",\"streamable\":false,\"env\":{\"conda\":\"conda.yaml\",\"virtualenv\":\"python_env.yaml\"},\"python_version\":\"3.12.3\"}},\"utc_time_created\":\"2026-10-30 03:28:34.372128\"}]"
+        },
+        {
+          "key": "mlflow.runColor",
+          "value": "#f0b899"
+        },
+        {
+          "key": "mlflow.runName",
+          "value": "final_model"
+        },
+        {
+          "key": "mlflow.source.name",
+          "value": "jobs/343968601521557/run/182102771012835"
+        },
+        {
+          "key": "mlflow.source.type",
+          "value": "JOB"
+        },
+        {
+          "key": "mlflow.user",
+          "value": "6036593a-f1b6-49ee-aa6d-145161164de9"
+        },
+        {
+          "key": "retention",
+          "value": "365d"
+        },
+        {
+          "key": "team",
+          "value": "fraud"
+        },
+        {
+          "key": "mlflow.artifacts.spn",
+          "value": "/WorkspaceInternal/Mlflow/Artifacts/3012879594899005/Runs/33532c22d9b442d4b0c1dbf74bb2eccc/"
+        }
+      ]
+    }
+  }
+}

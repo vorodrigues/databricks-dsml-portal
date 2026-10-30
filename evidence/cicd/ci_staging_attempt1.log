@@ -1,0 +1,257 @@
+# gh run view 40995322505 -R vorodrigues/databricks-tech-bar-fraud-project --attempt 1 --log (attempt 1: failure, run before the staging setup job had created the staging tables; attempt 2 in ci_staging.log). Truncated: first 235 and last 20 of     1686 lines.
+staging	Set up job	2026-10-30T03:04:51.6854530Z Current runner version: '2.338.0'
+staging	Set up job	2026-10-30T03:04:51.6895781Z ##[group]Runner Image Provisioner
+staging	Set up job	2026-10-30T03:04:51.6896779Z Hosted Compute Agent
+staging	Set up job	2026-10-30T03:04:51.6897530Z Version: 20261021.618
+staging	Set up job	2026-10-30T03:04:51.6898323Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+staging	Set up job	2026-10-30T03:04:51.6899109Z Build Date: 2026-10-21T00:45:21Z
+staging	Set up job	2026-10-30T03:04:51.6899978Z Worker ID: {175451f7-774f-48da-9b3c-c5b5fea116db}
+staging	Set up job	2026-10-30T03:04:51.6900876Z Region: northcentralus
+staging	Set up job	2026-10-30T03:04:51.6901586Z Cloud: Azure
+staging	Set up job	2026-10-30T03:04:51.6902517Z ##[endgroup]
+staging	Set up job	2026-10-30T03:04:51.6904008Z ##[group]Operating System
+staging	Set up job	2026-10-30T03:04:51.6904881Z Ubuntu
+staging	Set up job	2026-10-30T03:04:51.6905539Z 24.04.5
+staging	Set up job	2026-10-30T03:04:51.6906186Z LTS
+staging	Set up job	2026-10-30T03:04:51.6906850Z ##[endgroup]
+staging	Set up job	2026-10-30T03:04:51.6907548Z ##[group]Runner Image
+staging	Set up job	2026-10-30T03:04:51.6908273Z Image: ubuntu-24.04
+staging	Set up job	2026-10-30T03:04:51.6909005Z Version: 20261025.353.1
+staging	Set up job	2026-10-30T03:04:51.6910250Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+staging	Set up job	2026-10-30T03:04:51.6912323Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+staging	Set up job	2026-10-30T03:04:51.6913460Z ##[endgroup]
+staging	Set up job	2026-10-30T03:04:51.6914874Z ##[group]GITHUB_TOKEN Permissions
+staging	Set up job	2026-10-30T03:04:51.6917028Z Contents: read
+staging	Set up job	2026-10-30T03:04:51.6917825Z Metadata: read
+staging	Set up job	2026-10-30T03:04:51.6918532Z Packages: read
+staging	Set up job	2026-10-30T03:04:51.6919205Z ##[endgroup]
+staging	Set up job	2026-10-30T03:04:51.6921384Z Secret source: Actions
+staging	Set up job	2026-10-30T03:04:51.6922653Z Cache mode: write
+staging	Set up job	2026-10-30T03:04:51.6923792Z Prepare workflow directory
+staging	Set up job	2026-10-30T03:04:51.7594973Z Prepare all required actions
+staging	Set up job	2026-10-30T03:04:51.7663169Z Getting action download info
+staging	Set up job	2026-10-30T03:04:52.0035293Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+staging	Set up job	2026-10-30T03:04:52.1051661Z Download action repository 'databricks/setup-cli@v1.17.0' (SHA:d76f84cea9893ce68311a1f33fb0c95af6c963b7)
+staging	Set up job	2026-10-30T03:04:52.3818918Z Complete job name: staging
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4612519Z ##[group]Run actions/checkout@v4
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4613957Z with:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4614874Z   repository: vorodrigues/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4621707Z   token: ***
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4622718Z   ssh-strict: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4623516Z   ssh-user: git
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4624277Z   persist-credentials: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4625127Z   clean: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4625908Z   sparse-checkout-cone-mode: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4626820Z   fetch-depth: 1
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4627573Z   fetch-tags: false
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4628352Z   show-progress: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4629127Z   lfs: false
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4629800Z   submodules: false
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4630552Z   set-safe-directory: true
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4631340Z   allow-unsafe-pr-checkout: false
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4632914Z env:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4633987Z   DATABRICKS_HOST: ***
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4634653Z   DATABRICKS_CLIENT_ID: ***
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4635348Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.4635971Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.7370907Z Syncing repository: vorodrigues/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.7374284Z ##[group]Getting Git version info
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.7376109Z Working directory is '/home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project'
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.7377826Z [command]/usr/bin/git version
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8444484Z git version 2.56.0
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8493512Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8572846Z Temporarily overriding HOME='/home/runner/work/_temp/57f02e5b-2461-4ccf-bc48-a15ed6a3f177' before making global git config changes
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8579738Z Adding repository directory to the temporary git global config as a safe directory
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8583533Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8593657Z Deleting the contents of '/home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project'
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8596685Z ##[group]Initializing the repository
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8598565Z [command]/usr/bin/git init /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8600793Z hint: Using 'master' as the name for the initial branch. This default branch name
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8603694Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8605652Z hint: to use in all of your new repositories, which will suppress this warning,
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8607393Z hint: call:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8608407Z hint:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8609611Z hint: 	git config --global init.defaultBranch <name>
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8610928Z hint:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8614920Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8616785Z hint: 'development'. The just-created branch can be renamed via this command:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8618226Z hint:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8619070Z hint: 	git branch -m <name>
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8619991Z hint:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8621167Z hint: Disable this message with "git config set advice.defaultBranchName false"
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8623954Z Initialized empty Git repository in /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project/.git/
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8627844Z [command]/usr/bin/git remote add origin https://github.com/vorodrigues/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8631117Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8642984Z ##[group]Disabling automatic garbage collection
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8644527Z [command]/usr/bin/git config --local gc.auto 0
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8647196Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8648567Z ##[group]Setting up auth
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8649786Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8652811Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8763695Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.8814471Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9127473Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9146237Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9518299Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9532810Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9534959Z ##[group]Fetching the repository
+staging	Run actions/checkout@v4	2026-10-30T03:04:52.9538291Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f9084c3ab180e359a81a3f483b5c9c372e63bf79:refs/remotes/pull/1/merge
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2773340Z From https://github.com/vorodrigues/databricks-tech-bar-fraud-project
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2782626Z  * [new ref]         f9084c3ab180e359a81a3f483b5c9c372e63bf79 -> pull/1/merge
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2939491Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2941307Z ##[group]Determining the checkout info
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2953283Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2954057Z [command]/usr/bin/git sparse-checkout disable
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2957004Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2965420Z ##[group]Checking out the ref
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.2967284Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3018240Z Note: switching to 'refs/remotes/pull/1/merge'.
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3019326Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3020321Z You are in 'detached HEAD' state. You can look around, make experimental
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3023020Z changes and commit them, and you can discard any commits you make in this
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3025191Z state without impacting any branches by switching back to a branch.
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3026588Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3027596Z If you want to create a new branch to retain commits you create, you may
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3029929Z do so (now or later) by using -c with the switch command. Example:
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3031235Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3032299Z   git switch -c <new-branch-name>
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3033714Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3034579Z Or undo this operation with:
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3035457Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3036438Z   git switch -
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3042622Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3043828Z Turn off this advice by setting config variable advice.detachedHead to false
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3045195Z 
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3046636Z HEAD is now at f9084c3 Merge 14c9d957c144f75a0d45ea505e61cb3b6ca292cc into 3627884ffbd4bc086e91ea53896c80f8be1b982c
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3052192Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3092746Z [command]/usr/bin/git log -1 --format=%H
+staging	Run actions/checkout@v4	2026-10-30T03:04:53.3131870Z f9084c3ab180e359a81a3f483b5c9c372e63bf79
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3448050Z ##[group]Run databricks/setup-cli@v1.17.0
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3449058Z with:
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3537495Z env:
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3539554Z   DATABRICKS_HOST: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3540934Z   DATABRICKS_CLIENT_ID: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3542618Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3543880Z ##[endgroup]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3612878Z ##[start-action display=Download snapshot build;id=__databricks_setup-cli.__run]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3638123Z ##[end-action id=__databricks_setup-cli.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3644537Z ##[start-action display=Download release build;id=__databricks_setup-cli.__run_2]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3715224Z ##[group]Run bash $GITHUB_ACTION_PATH/setup_release.sh
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3716411Z bash $GITHUB_ACTION_PATH/setup_release.sh
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3743737Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3744783Z env:
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3745795Z   DATABRICKS_HOST: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3746826Z   DATABRICKS_CLIENT_ID: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3747841Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3748678Z   VERSION: 
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:53.3749418Z ##[endgroup]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1832864Z ##[end-action id=__databricks_setup-cli.__run_2;outcome=success;conclusion=success;duration_ms=818]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1838414Z ##[start-action display=Get Databricks CLI version;id=__databricks_setup-cli.__run_3]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1880274Z ##[group]Run databricks version --output json
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1881465Z databricks version --output json
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1908026Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1909265Z env:
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1910651Z   DATABRICKS_HOST: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1911727Z   DATABRICKS_CLIENT_ID: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1913225Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.1914085Z ##[endgroup]
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2159285Z {
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2160360Z   "ProjectName": "cli",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2161471Z   "Version": "1.17.0",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2162789Z   "Branch": "HEAD",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2163810Z   "Tag": "v1.17.0",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2164882Z   "ShortCommit": "7ef3e5cb6",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2166373Z   "FullCommit": "7ef3e5cb61364648f86cbe26f4051d34ccfe158a",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2167898Z   "CommitTime": "2026-09-16T13:52:25Z",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2169152Z   "Summary": "v1.17.0",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2170205Z   "Major": 1,
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2171124Z   "Minor": 17,
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2172218Z   "Patch": 0,
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2173222Z   "Prerelease": "",
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2174248Z   "IsSnapshot": false,
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2175400Z   "BuildTime": "2026-09-16T13:54:48Z"
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2176597Z }
+staging	Run databricks/setup-cli@v1.17.0	2026-10-30T03:04:54.2195105Z ##[end-action id=__databricks_setup-cli.__run_3;outcome=success;conclusion=success;duration_ms=35]
+staging	Validate bundle	2026-10-30T03:04:54.2273914Z ##[group]Run databricks bundle validate --target staging
+staging	Validate bundle	2026-10-30T03:04:54.2275284Z databricks bundle validate --target staging
+staging	Validate bundle	2026-10-30T03:04:54.2298688Z shell: /usr/bin/bash -e {0}
+staging	Validate bundle	2026-10-30T03:04:54.2299489Z env:
+staging	Validate bundle	2026-10-30T03:04:54.2300499Z   DATABRICKS_HOST: ***
+staging	Validate bundle	2026-10-30T03:04:54.2301490Z   DATABRICKS_CLIENT_ID: ***
+staging	Validate bundle	2026-10-30T03:04:54.2302840Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Validate bundle	2026-10-30T03:04:54.2303625Z ##[endgroup]
+staging	Validate bundle	2026-10-30T03:04:55.2960224Z Warning: Pattern .DRAFTS does not match any files
+staging	Validate bundle	2026-10-30T03:04:55.2961152Z   at sync.exclude[0]
+staging	Validate bundle	2026-10-30T03:04:55.2961762Z   in databricks.yml:11:7
+staging	Validate bundle	2026-10-30T03:04:55.2962218Z 
+staging	Validate bundle	2026-10-30T03:04:56.1363537Z Name: databricks_tech_bar_fraud_project
+staging	Validate bundle	2026-10-30T03:04:56.1364636Z Target: staging
+staging	Validate bundle	2026-10-30T03:04:56.1365332Z Workspace:
+staging	Validate bundle	2026-10-30T03:04:56.1366184Z   Host: ***
+staging	Validate bundle	2026-10-30T03:04:56.1366818Z   User: ***
+staging	Validate bundle	2026-10-30T03:04:56.1367793Z   Path: /Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/staging
+staging	Validate bundle	2026-10-30T03:04:56.1368854Z 
+staging	Validate bundle	2026-10-30T03:04:56.1369189Z Found 1 warning
+staging	Deploy bundle	2026-10-30T03:04:56.1424401Z ##[group]Run databricks bundle deploy --target staging
+staging	Deploy bundle	2026-10-30T03:04:56.1424852Z databricks bundle deploy --target staging
+staging	Deploy bundle	2026-10-30T03:04:56.1446268Z shell: /usr/bin/bash -e {0}
+staging	Deploy bundle	2026-10-30T03:04:56.1446549Z env:
+staging	Deploy bundle	2026-10-30T03:04:56.1446930Z   DATABRICKS_HOST: ***
+staging	Deploy bundle	2026-10-30T03:04:56.1447268Z   DATABRICKS_CLIENT_ID: ***
+staging	Deploy bundle	2026-10-30T03:04:56.1447620Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Deploy bundle	2026-10-30T03:04:56.1447883Z ##[endgroup]
+staging	Deploy bundle	2026-10-30T03:04:58.8403604Z Uploading bundle files to /Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/staging/files...
+staging	Deploy bundle	2026-10-30T03:05:01.4926659Z Created experiments.fraud_experiment
+staging	Deploy bundle	2026-10-30T03:05:01.7519043Z Created registered_models.fraud_model
+staging	Deploy bundle	2026-10-30T03:05:02.1403656Z Created volumes.landing
+staging	Deploy bundle	2026-10-30T03:05:02.3677841Z Created jobs.fraud_online_deploy
+staging	Deploy bundle	2026-10-30T03:05:02.4008875Z Created jobs.fraud_batch_scoring
+staging	Deploy bundle	2026-10-30T03:05:02.4702418Z Created jobs.fraud_training
+staging	Deploy bundle	2026-10-30T03:05:03.2849344Z Created jobs.fraud_batch_scoring.permissions
+staging	Deploy bundle	2026-10-30T03:05:03.2905765Z Created jobs.fraud_online_deploy.permissions
+staging	Deploy bundle	2026-10-30T03:05:03.3076310Z Created jobs.fraud_training.permissions
+staging	Deploy bundle	2026-10-30T03:05:03.5194603Z Created pipelines.fraud_ingest
+staging	Deploy bundle	2026-10-30T03:05:04.2376056Z Created jobs.fraud_setup
+staging	Deploy bundle	2026-10-30T03:05:05.0052760Z Created jobs.fraud_setup.permissions
+staging	Deploy bundle	2026-10-30T03:05:05.5767939Z Files: 21 uploaded, 0 deleted
+staging	Deploy bundle	2026-10-30T03:05:05.5768942Z Resources: 12 created, 0 changed, 0 deleted, 0 unchanged
+staging	Run training	2026-10-30T03:05:06.1643986Z ##[group]Run databricks bundle run --target staging fraud_training
+staging	Run training	2026-10-30T03:05:06.1644845Z databricks bundle run --target staging fraud_training
+staging	Run training	2026-10-30T03:05:06.1674059Z shell: /usr/bin/bash -e {0}
+staging	Run training	2026-10-30T03:05:06.1674469Z env:
+staging	Run training	2026-10-30T03:05:06.1675248Z   DATABRICKS_HOST: ***
+staging	Run training	2026-10-30T03:05:06.1675789Z   DATABRICKS_CLIENT_ID: ***
+staging	Run training	2026-10-30T03:05:06.1676345Z   DATABRICKS_CLIENT_SECRET: ***
+staging	Run training	2026-10-30T03:05:06.1676760Z ##[endgroup]
+staging	Run training	2026-10-30T03:05:08.0367943Z Run URL: ***/jobs/788998868260574/runs/732866868970294?o=7474655075961307
+staging	Run training	2026-10-30T03:05:08.0368628Z 
+staging	Run training	2026-10-30T03:05:08.0368840Z 2026-10-30 03:05:08 "staging_fraud_training" RUNNING
+staging	Run training	2026-10-30T03:07:43.8928642Z 2026-10-30 03:07:43 "staging_fraud_training" INTERNAL_ERROR FAILED Task feature_ondemand failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+staging	Run training	2026-10-30T03:07:44.5922360Z Task feature_batch FAILED:
+staging	Run training	2026-10-30T03:07:44.5923137Z ValueError: Delta table 'vr_workspace.tech_bar_staging.raw_pix_transactions' does not exist
+staging	Run training	2026-10-30T03:07:44.5924080Z [Trace ID: 00-4822173e8b17633cb65d7d6f030e574b-79acf33997c63004-00]
+staging	Run training	2026-10-30T03:07:44.5925138Z ---------------------------------------------------------------------------
+staging	Run training	2026-10-30T03:07:44.5925987Z NotFound                                  Traceback (most recent call last)
+staging	Run training	2026-10-30T03:07:44.5928555Z File /local_disk0/.ephemeral_nfs/envs/pythonEnv-70420cda-7d1c-4101-99e7-b6183a6d77a2/lib/python3.12/site-packages/databricks/feature_engineering/client.py:802, in FeatureEngineeringClient.get_feature(self, full_name)
+staging	Run training	2026-10-30T03:07:44.5930577Z     801 try:
+... [truncated 1431 lines: repeated Python tracebacks of the failed tasks] ...
+staging	Run training	2026-10-30T03:07:47.3898216Z 
+staging	Run training	2026-10-30T03:07:47.3899218Z PermissionDenied: Principal 'cicd-ml-serving' does not have CREATE FEATURE on Schema 'vr_workspace.tech_bar_staging'. Config: host=***, auth_type=runtime
+staging	Run training	2026-10-30T03:07:47.3900413Z Error: failed to reach TERMINATED or SKIPPED, got INTERNAL_ERROR: Task feature_ondemand failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+staging	Run training	2026-10-30T03:07:47.3909946Z ##[error]Process completed with exit code 1.
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.4049695Z Post job cleanup.
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5045535Z [command]/usr/bin/git version
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5132795Z git version 2.56.0
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5192685Z Temporarily overriding HOME='/home/runner/work/_temp/6cdb62eb-4c28-4515-8f8b-3055e35c8480' before making global git config changes
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5194350Z Adding repository directory to the temporary git global config as a safe directory
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5196208Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5243966Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5326108Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5742446Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5761411Z http.https://github.com/.extraheader
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5803878Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.5863520Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.6223044Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+staging	Post Run actions/checkout@v4	2026-10-30T03:07:47.6314574Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+staging	Complete job	2026-10-30T03:07:47.6829111Z Cleaning up orphan processes
+staging	Complete job	2026-10-30T03:07:47.7166926Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

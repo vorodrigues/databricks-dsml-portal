@@ -1,0 +1,29 @@
+{
+  "source": "databricks genie get-space 01f1d4155e9c14d0a6ea4024f1a6e241 --include-serialized-space (created and updated by the dsml_portal_genie job)",
+  "space_id": "01f1d4155e9c14d0a6ea4024f1a6e241",
+  "title": "DSML Portal Projects",
+  "description": "Ask about the DSML Portal projects and their assets: experiment runs, jobs, models and prod tables.",
+  "warehouse_id": "854312e54074c4f7",
+  "create_time": "2026-10-30T03:52:47.189Z",
+  "update_time": "2026-10-30T03:58:34.938Z",
+  "tables": [
+    "dsml_portal.portal.projects",
+    "system.lakeflow.job_run_timeline",
+    "system.lakeflow.jobs",
+    "system.mlflow.runs_latest",
+    "vr_workspace.tech_bar.fraud_batch_predictions",
+    "vr_workspace.tech_bar.fraud_serving_inference_payload",
+    "vr_workspace.tech_bar.raw_fraud_labels",
+    "vr_workspace.tech_bar.raw_pix_transactions"
+  ],
+  "text_instructions": [
+    "DSML Portal projects\n- dsml_portal.portal.projects has one row per ML project created in the DSML Portal (a Databricks App). Each project is a GitHub repository (repo = owner/name) with a Databricks bundle rendered from a project template; creator is the user who created it.\n- status: 'creating' (repository and template being set up), 'ready' (created successfully) or 'failed' (creation error, see error).\n- params is the JSON of the bundle parameters. Use it only for catalog, schema_dev, schema_staging, schema_prod and model_name (for example get_json_object(params, '$.schema_prod')). Never use the root_path_* keys: they may not match the deployed folders.\n- prod_model is the production registered model (<catalog>.<schema_prod>.<model_name>); the version with the champion alias is the one in production.\n\nProject assets\n- Each project deploys its bundle per target (dev, staging, prod) to a workspace folder ending in /<project name>/<target>/.\n- Jobs of a project: system.lakeflow.jobs rows whose deployment.metadata_file_path contains '/<project name>/<target>/'. Prod jobs are prod_fraud_setup, prod_fraud_training, prod_fraud_batch_scoring and prod_fraud_online_deploy. Keep the latest row per job_id (max change_time) with delete_time null.\n- Job runs: system.lakeflow.job_run_timeline joined on workspace_id and job_id. Long runs span several rows: keep the row with the latest period_end_time per run_id. The latest run of a job has the max period_start_time; result_state null means the run is still in progress.\n- Training runs of a project: system.mlflow.runs_latest rows whose tags['mlflow.databricks.notebookPath'] contains '/<project name>/<target>/'. The final run of each training has run_name 'final_model' and logs the test metric test_auc; read it from aggregated_metrics (metric_name 'test_auc', latest_value). The tuning runs log train_auc and val_auc.\n- Always filter system tables by workspace_id = '7474655075961307'.\n- Prod tables of the projects are in vr_workspace.tech_bar. The latest batch scoring is the set of rows of fraud_batch_predictions with the max scored_at. fraud_serving_inference_payload has one row per request to the prod endpoint prod_fraud_serving; count requests per day with request_date.\n\nPIX fraud domain\n- PIX is the Brazilian instant payment system. Each transaction has holder_id (account holder), created_at_brt (Brasilia time) and amount (BRL); about 5% of the labeled transactions are fraud.\n- The model scores whether a transaction is fraud from batch and on-demand features of the holder; prediction 1 means fraud.\n"
+  ],
+  "sample_questions": [
+    "What is the daily request volume of the serving endpoint?",
+    "How many transactions did the latest batch scoring classify as fraud?",
+    "Which projects are ready, and who created them?",
+    "What is the test metric of the latest training run of each project?",
+    "What is the status of the latest run of each prod job of each project?"
+  ]
+}

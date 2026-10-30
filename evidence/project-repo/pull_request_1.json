@@ -1,0 +1,134 @@
+{
+  "number": 1,
+  "title": "Initial Classification bundle",
+  "url": "https://github.com/vorodrigues/databricks-tech-bar-fraud-project/pull/1",
+  "state": "MERGED",
+  "author": "vorodrigues",
+  "baseRefName": "main",
+  "headRefName": "init",
+  "createdAt": "2026-10-30T03:04:44Z",
+  "mergedAt": "2026-10-30T03:19:43Z",
+  "mergedBy": "vorodrigues",
+  "mergeCommit": "c18fa2302fa9dad098a9937dbcb82b70b53394d1",
+  "additions": 1522,
+  "deletions": 1,
+  "changedFiles": 21,
+  "commits": [
+    {
+      "oid": "423f29580dc8cb43f7189fd663a0883cb5ddb236",
+      "messageHeadline": "Initial Classification bundle for databricks-tech-bar-fraud-project"
+    },
+    {
+      "oid": "14c9d957c144f75a0d45ea505e61cb3b6ca292cc",
+      "messageHeadline": "Set workspace root paths under the tech_bar folder"
+    }
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/cd.yml",
+      "additions": 29,
+      "deletions": 0
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "additions": 32,
+      "deletions": 0
+    },
+    {
+      "path": ".gitignore",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "README.md",
+      "additions": 93,
+      "deletions": 1
+    },
+    {
+      "path": "databricks.yml",
+      "additions": 62,
+      "deletions": 0
+    },
+    {
+      "path": "resources/batch-scoring-workflow-resource.yml",
+      "additions": 38,
+      "deletions": 0
+    },
+    {
+      "path": "resources/ingest-pipeline-resource.yml",
+      "additions": 22,
+      "deletions": 0
+    },
+    {
+      "path": "resources/ml-artifacts-resource.yml",
+      "additions": 12,
+      "deletions": 0
+    },
+    {
+      "path": "resources/online-deploy-workflow-resource.yml",
+      "additions": 30,
+      "deletions": 0
+    },
+    {
+      "path": "resources/setup-workflow-resource.yml",
+      "additions": 42,
+      "deletions": 0
+    },
+    {
+      "path": "resources/training-workflow-resource.yml",
+      "additions": 85,
+      "deletions": 0
+    },
+    {
+      "path": "scoring/notebooks/batch_scoring.py",
+      "additions": 86,
+      "deletions": 0
+    },
+    {
+      "path": "serving/notebooks/online_deploy.py",
+      "additions": 166,
+      "deletions": 0
+    },
+    {
+      "path": "setup/notebooks/data.py",
+      "additions": 103,
+      "deletions": 0
+    },
+    {
+      "path": "setup/notebooks/online_store.py",
+      "additions": 84,
+      "deletions": 0
+    },
+    {
+      "path": "setup/notebooks/tag_policy.py",
+      "additions": 110,
+      "deletions": 0
+    },
+    {
+      "path": "setup/pipelines/ingest.py",
+      "additions": 65,
+      "deletions": 0
+    },
+    {
+      "path": "training/notebooks/feature_batch.py",
+      "additions": 127,
+      "deletions": 0
+    },
+    {
+      "path": "training/notebooks/feature_ondemand.py",
+      "additions": 82,
+      "deletions": 0
+    },
+    {
+      "path": "training/notebooks/register.py",
+      "additions": 77,
+      "deletions": 0
+    },
+    {
+      "path": "training/notebooks/train.py",
+      "additions": 176,
+      "deletions": 0
+    }
+  ],
+  "body": "Initial bundle rendered from the Classification Project Template, with workspace root paths under the tech_bar folder.\n\nThis pull request and its description were written by Isaac."
+}

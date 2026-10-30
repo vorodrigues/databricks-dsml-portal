@@ -1,0 +1,143 @@
+{
+  "source": "Pipeline event log (event_log table-valued function) of the dev deployment of the same pipeline, dev_fraud_ingest (pipeline 3bf6b252-b340-438b-ae52-f261489a9883, schema vr_workspace.tech_bar_dev), same source code and data generator. The prod event log is owned by the service principal that runs the prod jobs; in prod, bronze and silver row counts match (table_counts.json), so no record was dropped by the expectations.",
+  "sql": "SELECT origin.update_id, origin.flow_name, details:flow_progress:metrics:num_output_rows::bigint AS num_output_rows, details:flow_progress:data_quality:dropped_records::bigint AS dropped_records, details:flow_progress:data_quality:expectations AS expectations, timestamp FROM event_log('3bf6b252-b340-438b-ae52-f261489a9883') WHERE event_type='flow_progress' AND details:flow_progress:status::string='COMPLETED' ORDER BY timestamp",
+  "state": "SUCCEEDED",
+  "columns": [
+    "update_id",
+    "flow_name",
+    "num_output_rows",
+    "dropped_records",
+    "expectations",
+    "timestamp"
+  ],
+  "rows": [
+    [
+      "4d336b5f-b6ac-4602-a3db-581e2211bf3a",
+      "vr_workspace.tech_bar_dev.bronze_fraud_labels",
+      null,
+      null,
+      null,
+      "2026-10-30T02:05:11.540Z"
+    ],
+    [
+      "4d336b5f-b6ac-4602-a3db-581e2211bf3a",
+      "vr_workspace.tech_bar_dev.bronze_pix_transactions",
+      null,
+      null,
+      null,
+      "2026-10-30T02:05:12.366Z"
+    ],
+    [
+      "4d336b5f-b6ac-4602-a3db-581e2211bf3a",
+      "vr_workspace.tech_bar_dev.raw_fraud_labels",
+      "100000",
+      "0",
+      [
+        {
+          "name": "valid_keys",
+          "dataset": "vr_workspace.tech_bar_dev.raw_fraud_labels",
+          "passed_records": 100000,
+          "failed_records": 0
+        },
+        {
+          "name": "valid_label",
+          "dataset": "vr_workspace.tech_bar_dev.raw_fraud_labels",
+          "passed_records": 100000,
+          "failed_records": 0
+        }
+      ],
+      "2026-10-30T02:05:17.856Z"
+    ],
+    [
+      "4d336b5f-b6ac-4602-a3db-581e2211bf3a",
+      "vr_workspace.tech_bar_dev.raw_pix_transactions",
+      "1000000",
+      "0",
+      [
+        {
+          "name": "valid_holder_id",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        },
+        {
+          "name": "valid_created_at_brt",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        },
+        {
+          "name": "positive_amount",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        }
+      ],
+      "2026-10-30T02:05:20.039Z"
+    ],
+    [
+      "f5335a57-d31b-4a7b-af76-43c15d6dd767",
+      "vr_workspace.tech_bar_dev.bronze_fraud_labels",
+      null,
+      null,
+      null,
+      "2026-10-30T02:15:57.379Z"
+    ],
+    [
+      "f5335a57-d31b-4a7b-af76-43c15d6dd767",
+      "vr_workspace.tech_bar_dev.bronze_pix_transactions",
+      null,
+      null,
+      null,
+      "2026-10-30T02:15:57.389Z"
+    ],
+    [
+      "f5335a57-d31b-4a7b-af76-43c15d6dd767",
+      "vr_workspace.tech_bar_dev.raw_fraud_labels",
+      "100000",
+      "0",
+      [
+        {
+          "name": "valid_keys",
+          "dataset": "vr_workspace.tech_bar_dev.raw_fraud_labels",
+          "passed_records": 100000,
+          "failed_records": 0
+        },
+        {
+          "name": "valid_label",
+          "dataset": "vr_workspace.tech_bar_dev.raw_fraud_labels",
+          "passed_records": 100000,
+          "failed_records": 0
+        }
+      ],
+      "2026-10-30T02:16:01.557Z"
+    ],
+    [
+      "f5335a57-d31b-4a7b-af76-43c15d6dd767",
+      "vr_workspace.tech_bar_dev.raw_pix_transactions",
+      "1000000",
+      "0",
+      [
+        {
+          "name": "valid_holder_id",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        },
+        {
+          "name": "valid_created_at_brt",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        },
+        {
+          "name": "positive_amount",
+          "dataset": "vr_workspace.tech_bar_dev.raw_pix_transactions",
+          "passed_records": 1000000,
+          "failed_records": 0
+        }
+      ],
+      "2026-10-30T02:16:01.756Z"
+    ]
+  ]
+}

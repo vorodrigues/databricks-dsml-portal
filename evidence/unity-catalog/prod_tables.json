@@ -1,0 +1,95 @@
+{
+  "source": "SQL on the Serverless SQL warehouse 854312e54074c4f7. __materialization_* and event_log_* are internal tables of the pipeline; batch_pix_features_* back the Feature View (the *_online_* table is the Lakebase online store, exposed as FOREIGN).",
+  "queries": [
+    {
+      "sql": "SELECT table_name, table_type FROM vr_workspace.information_schema.tables WHERE table_schema='tech_bar' ORDER BY table_name",
+      "state": "SUCCEEDED",
+      "columns": [
+        "table_name",
+        "table_type"
+      ],
+      "rows": [
+        [
+          "__materialization_mat_84f23740_51d0_4c92_a41f_ef1713e45309_bronze_fraud_labels_1",
+          "MANAGED"
+        ],
+        [
+          "__materialization_mat_84f23740_51d0_4c92_a41f_ef1713e45309_bronze_pix_transactions_1",
+          "MANAGED"
+        ],
+        [
+          "__materialization_mat_84f23740_51d0_4c92_a41f_ef1713e45309_raw_fraud_labels_1",
+          "MANAGED"
+        ],
+        [
+          "__materialization_mat_84f23740_51d0_4c92_a41f_ef1713e45309_raw_pix_transactions_1",
+          "MANAGED"
+        ],
+        [
+          "batch_pix_features_gct6b4",
+          "MANAGED"
+        ],
+        [
+          "batch_pix_features_gct6b4_latest_view",
+          "VIEW"
+        ],
+        [
+          "batch_pix_features_gct6b4_partial_aggregates",
+          "MANAGED"
+        ],
+        [
+          "batch_pix_features_online_gct6b4",
+          "FOREIGN"
+        ],
+        [
+          "bronze_fraud_labels",
+          "STREAMING_TABLE"
+        ],
+        [
+          "bronze_pix_transactions",
+          "STREAMING_TABLE"
+        ],
+        [
+          "event_log_84f23740_51d0_4c92_a41f_ef1713e45309",
+          "MANAGED"
+        ],
+        [
+          "event_log_e566676e_33be_4744_a2f9_16aed55e1bb8",
+          "MANAGED"
+        ],
+        [
+          "fraud_batch_predictions",
+          "MANAGED"
+        ],
+        [
+          "fraud_serving_inference_payload",
+          "MANAGED"
+        ],
+        [
+          "raw_fraud_labels",
+          "MATERIALIZED_VIEW"
+        ],
+        [
+          "raw_pix_transactions",
+          "MATERIALIZED_VIEW"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT table_name, tag_name, tag_value FROM vr_workspace.information_schema.table_tags WHERE schema_name='tech_bar' ORDER BY table_name, tag_name",
+      "state": "SUCCEEDED",
+      "columns": [
+        "table_name",
+        "tag_name",
+        "tag_value"
+      ],
+      "rows": [
+        [
+          "fraud_serving_inference_payload",
+          "product",
+          "ai-gateway"
+        ]
+      ]
+    }
+  ]
+}

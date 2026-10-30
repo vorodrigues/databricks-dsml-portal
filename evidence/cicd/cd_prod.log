@@ -1,0 +1,217 @@
+# gh run view 40996750940 -R vorodrigues/databricks-tech-bar-fraud-project --log (workflow 'CD - prod', push to main after the merge of PR #1: success). Secrets are masked by GitHub Actions as ***.
+prod	UNKNOWN STEP	2026-10-30T03:19:49.4990038Z Current runner version: '2.338.0'
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5015840Z ##[group]Runner Image Provisioner
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5016931Z Hosted Compute Agent
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5017652Z Version: 20261021.618
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5018551Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5019487Z Build Date: 2026-10-21T00:45:21Z
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5020241Z Worker ID: {c6f9daf2-009a-4629-b8aa-14783bec54d5}
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5021019Z Region: westus3
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5021652Z Cloud: Azure
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5022229Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5024152Z ##[group]Operating System
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5024882Z Ubuntu
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5025923Z 24.04.5
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5026513Z LTS
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5027090Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5027727Z ##[group]Runner Image
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5028769Z Image: ubuntu-24.04
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5029476Z Version: 20261025.353.1
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5030787Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5032495Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5033556Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5034795Z ##[group]GITHUB_TOKEN Permissions
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5037122Z Contents: read
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5037779Z Metadata: read
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5038617Z Packages: read
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5039286Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5041524Z Secret source: Actions
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5042671Z Cache mode: write
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5043729Z Prepare workflow directory
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5600624Z Prepare all required actions
+prod	UNKNOWN STEP	2026-10-30T03:19:49.5650579Z Getting action download info
+prod	UNKNOWN STEP	2026-10-30T03:19:49.8962571Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+prod	UNKNOWN STEP	2026-10-30T03:19:49.9983592Z Download action repository 'databricks/setup-cli@v1.17.0' (SHA:d76f84cea9893ce68311a1f33fb0c95af6c963b7)
+prod	UNKNOWN STEP	2026-10-30T03:19:50.3388926Z Complete job name: prod
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4254577Z ##[group]Run actions/checkout@v4
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4255528Z with:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4256129Z   repository: vorodrigues/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4260471Z   token: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4260960Z   ssh-strict: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4261419Z   ssh-user: git
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4261881Z   persist-credentials: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4262461Z   clean: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4262991Z   sparse-checkout-cone-mode: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4263518Z   fetch-depth: 1
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4263962Z   fetch-tags: false
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4264420Z   show-progress: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4264899Z   lfs: false
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4265328Z   submodules: false
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4265800Z   set-safe-directory: true
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4266330Z   allow-unsafe-pr-checkout: false
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4267173Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4267832Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4268799Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4269518Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:50.4270052Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6643415Z Syncing repository: vorodrigues/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6646638Z ##[group]Getting Git version info
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6649266Z Working directory is '/home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project'
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6651863Z [command]/usr/bin/git version
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6720769Z git version 2.56.0
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6752151Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6760470Z Temporarily overriding HOME='/home/runner/work/_temp/31626ab5-f921-460b-b707-fb85d05b9dd9' before making global git config changes
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6762771Z Adding repository directory to the temporary git global config as a safe directory
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6766258Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6851324Z Deleting the contents of '/home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project'
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6855370Z ##[group]Initializing the repository
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6869988Z [command]/usr/bin/git init /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6960202Z hint: Using 'master' as the name for the initial branch. This default branch name
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6961608Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6962600Z hint: to use in all of your new repositories, which will suppress this warning,
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6963477Z hint: call:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6963912Z hint:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6964452Z hint: 	git config --global init.defaultBranch <name>
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6965077Z hint:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6965673Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6966761Z hint: 'development'. The just-created branch can be renamed via this command:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6967561Z hint:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6968301Z hint: 	git branch -m <name>
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6968835Z hint:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6969485Z hint: Disable this message with "git config set advice.defaultBranchName false"
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6983227Z Initialized empty Git repository in /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project/.git/
+prod	UNKNOWN STEP	2026-10-30T03:19:50.6989893Z [command]/usr/bin/git remote add origin https://github.com/vorodrigues/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7040531Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7041354Z ##[group]Disabling automatic garbage collection
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7056916Z [command]/usr/bin/git config --local gc.auto 0
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7093879Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7095168Z ##[group]Setting up auth
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7103002Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7148456Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7566241Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7621826Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7893144Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prod	UNKNOWN STEP	2026-10-30T03:19:50.7944284Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prod	UNKNOWN STEP	2026-10-30T03:19:50.8212957Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+prod	UNKNOWN STEP	2026-10-30T03:19:50.8268472Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:50.8269865Z ##[group]Fetching the repository
+prod	UNKNOWN STEP	2026-10-30T03:19:50.8281263Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c18fa2302fa9dad098a9937dbcb82b70b53394d1:refs/remotes/origin/main
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2643047Z From https://github.com/vorodrigues/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2645212Z  * [new ref]         c18fa2302fa9dad098a9937dbcb82b70b53394d1 -> origin/main
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2649031Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2650574Z ##[group]Determining the checkout info
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2652355Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2659863Z [command]/usr/bin/git sparse-checkout disable
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2725993Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2776539Z ##[group]Checking out the ref
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2780598Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2882773Z Switched to a new branch 'main'
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2884456Z branch 'main' set up to track 'origin/main'.
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2899650Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2944226Z [command]/usr/bin/git log -1 --format=%H
+prod	UNKNOWN STEP	2026-10-30T03:19:51.2981564Z c18fa2302fa9dad098a9937dbcb82b70b53394d1
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3344586Z ##[group]Run databricks/setup-cli@v1.17.0
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3345808Z with:
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3346521Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3347892Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3349352Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3350632Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3351583Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3419621Z ##[start-action display=Download snapshot build;id=__databricks_setup-cli.__run]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3446385Z ##[end-action id=__databricks_setup-cli.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3453761Z ##[start-action display=Download release build;id=__databricks_setup-cli.__run_2]
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3527408Z ##[group]Run bash $GITHUB_ACTION_PATH/setup_release.sh
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3529174Z bash $GITHUB_ACTION_PATH/setup_release.sh
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3557204Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3559020Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3560269Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3561396Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3644018Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3645226Z   VERSION: 
+prod	UNKNOWN STEP	2026-10-30T03:19:51.3645941Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.0935226Z ##[end-action id=__databricks_setup-cli.__run_2;outcome=success;conclusion=success;duration_ms=747]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.0942187Z ##[start-action display=Get Databricks CLI version;id=__databricks_setup-cli.__run_3]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.0988499Z ##[group]Run databricks version --output json
+prod	UNKNOWN STEP	2026-10-30T03:19:52.0989674Z databricks version --output json
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1014193Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1015285Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1016516Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1017564Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1018938Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1019878Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1228614Z {
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1230123Z   "ProjectName": "cli",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1231544Z   "Version": "1.17.0",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1232884Z   "Branch": "HEAD",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1234288Z   "Tag": "v1.17.0",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1235704Z   "ShortCommit": "7ef3e5cb6",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1237303Z   "FullCommit": "7ef3e5cb61364648f86cbe26f4051d34ccfe158a",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1238960Z   "CommitTime": "2026-09-16T13:52:25Z",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1239921Z   "Summary": "v1.17.0",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1240834Z   "Major": 1,
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1242295Z   "Minor": 17,
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1243579Z   "Patch": 0,
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1244653Z   "Prerelease": "",
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1245552Z   "IsSnapshot": false,
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1246490Z   "BuildTime": "2026-09-16T13:54:48Z"
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1247393Z }
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1258981Z ##[end-action id=__databricks_setup-cli.__run_3;outcome=success;conclusion=success;duration_ms=31]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1327829Z ##[group]Run databricks bundle validate --target prod
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1329275Z databricks bundle validate --target prod
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1352207Z shell: /usr/bin/bash -e {0}
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1353063Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1354118Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1355073Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1356071Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:52.1356916Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.8453895Z Warning: Pattern .DRAFTS does not match any files
+prod	UNKNOWN STEP	2026-10-30T03:19:52.8454535Z   at sync.exclude[0]
+prod	UNKNOWN STEP	2026-10-30T03:19:52.8454924Z   in databricks.yml:11:7
+prod	UNKNOWN STEP	2026-10-30T03:19:52.8455171Z 
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5214044Z Name: databricks_tech_bar_fraud_project
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5219064Z Target: prod
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5219627Z Workspace:
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5220413Z   Host: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5220837Z   User: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5221745Z   Path: /Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5223030Z 
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5223196Z Found 1 warning
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5269025Z ##[group]Run databricks bundle deploy --target prod
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5269491Z databricks bundle deploy --target prod
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5290691Z shell: /usr/bin/bash -e {0}
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5290954Z env:
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5291399Z   DATABRICKS_HOST: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5291737Z   DATABRICKS_CLIENT_ID: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5292080Z   DATABRICKS_CLIENT_SECRET: ***
+prod	UNKNOWN STEP	2026-10-30T03:19:53.5292337Z ##[endgroup]
+prod	UNKNOWN STEP	2026-10-30T03:19:55.7067714Z Uploading bundle files to /Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files...
+prod	UNKNOWN STEP	2026-10-30T03:19:56.7461609Z Created experiments.fraud_experiment
+prod	UNKNOWN STEP	2026-10-30T03:19:56.8544415Z Created registered_models.fraud_model
+prod	UNKNOWN STEP	2026-10-30T03:19:57.2192117Z Created volumes.landing
+prod	UNKNOWN STEP	2026-10-30T03:19:57.3457888Z Created jobs.fraud_online_deploy
+prod	UNKNOWN STEP	2026-10-30T03:19:57.4308989Z Created jobs.fraud_training
+prod	UNKNOWN STEP	2026-10-30T03:19:57.4420547Z Created jobs.fraud_batch_scoring
+prod	UNKNOWN STEP	2026-10-30T03:19:58.1575151Z Created jobs.fraud_online_deploy.permissions
+prod	UNKNOWN STEP	2026-10-30T03:19:58.1586903Z Created jobs.fraud_training.permissions
+prod	UNKNOWN STEP	2026-10-30T03:19:58.1713632Z Created jobs.fraud_batch_scoring.permissions
+prod	UNKNOWN STEP	2026-10-30T03:19:58.6704460Z Created pipelines.fraud_ingest
+prod	UNKNOWN STEP	2026-10-30T03:19:59.2911449Z Created jobs.fraud_setup
+prod	UNKNOWN STEP	2026-10-30T03:19:59.9739125Z Created jobs.fraud_setup.permissions
+prod	UNKNOWN STEP	2026-10-30T03:20:00.3877050Z Files: 21 uploaded, 0 deleted
+prod	UNKNOWN STEP	2026-10-30T03:20:00.3877650Z Resources: 12 created, 0 changed, 0 deleted, 0 unchanged
+prod	UNKNOWN STEP	2026-10-30T03:20:00.8165463Z Post job cleanup.
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9066806Z [command]/usr/bin/git version
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9118591Z git version 2.56.0
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9166183Z Temporarily overriding HOME='/home/runner/work/_temp/e17f6cea-c9c7-4223-99ac-c6eb61de682b' before making global git config changes
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9168271Z Adding repository directory to the temporary git global config as a safe directory
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9173499Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/databricks-tech-bar-fraud-project/databricks-tech-bar-fraud-project
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9224980Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9271784Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9554869Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9586314Z http.https://github.com/.extraheader
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9600194Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9649035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9926083Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prod	UNKNOWN STEP	2026-10-30T03:20:00.9985214Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prod	UNKNOWN STEP	2026-10-30T03:20:01.0418885Z Cleaning up orphan processes
+prod	UNKNOWN STEP	2026-10-30T03:20:01.0863472Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,23 @@
+# Registers the portal catalog database in Unity Catalog and creates or updates the Genie Space over the projects
+resources:
+  jobs:
+    dsml_portal_genie:
+      name: dsml_portal_genie
+      description: Genie Space `DSML Portal Projects` over the portal projects and their prod assets
+      parameters:
+        - name: catalog
+          default: vr_workspace
+        - name: schema
+          default: tech_bar
+        - name: warehouse_id
+          default: 854312e54074c4f7
+        - name: lakebase_branch
+          default: ${var.lakebase_branch}
+        - name: lakebase_database
+          default: dsml_portal
+        - name: readers
+          default: ${workspace.current_user.userName}
+      tasks:
+        - task_key: genie
+          notebook_task:
+            notebook_path: ../genie/portal_genie.py

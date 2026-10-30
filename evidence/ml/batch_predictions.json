@@ -1,0 +1,79 @@
+{
+  "source": "SQL on the Serverless SQL warehouse 854312e54074c4f7; table written by the score task of prod_fraud_batch_scoring (run 353407243695613) with the champion model",
+  "summary": {
+    "sql": "SELECT count(*) AS rows, sum(CASE WHEN prediction = 1 THEN 1 ELSE 0 END) AS predicted_fraud, max(scored_at) AS scored_at FROM vr_workspace.tech_bar.fraud_batch_predictions",
+    "state": "SUCCEEDED",
+    "columns": [
+      "rows",
+      "predicted_fraud",
+      "scored_at"
+    ],
+    "rows": [
+      [
+        "100000",
+        "43054",
+        "2026-10-30T03:30:48.519Z"
+      ]
+    ]
+  },
+  "sample": {
+    "sql": "SELECT holder_id, created_at_brt, amount, prediction, model_version, source_table, scored_at FROM vr_workspace.tech_bar.fraud_batch_predictions ORDER BY created_at_brt DESC, holder_id LIMIT 5",
+    "state": "SUCCEEDED",
+    "columns": [
+      "holder_id",
+      "created_at_brt",
+      "amount",
+      "prediction",
+      "model_version",
+      "source_table",
+      "scored_at"
+    ],
+    "rows": [
+      [
+        "H0026806432",
+        "2026-10-29T23:59:58.000Z",
+        "68.24",
+        "0.0",
+        "1",
+        "vr_workspace.tech_bar.raw_fraud_labels",
+        "2026-10-30T03:30:48.519Z"
+      ],
+      [
+        "H5162324024",
+        "2026-10-29T23:59:54.000Z",
+        "144.88",
+        "1.0",
+        "1",
+        "vr_workspace.tech_bar.raw_fraud_labels",
+        "2026-10-30T03:30:48.519Z"
+      ],
+      [
+        "H0088121296",
+        "2026-10-29T23:59:53.000Z",
+        "129.36",
+        "0.0",
+        "1",
+        "vr_workspace.tech_bar.raw_fraud_labels",
+        "2026-10-30T03:30:48.519Z"
+      ],
+      [
+        "H8661461120",
+        "2026-10-29T23:59:41.000Z",
+        "212.84",
+        "0.0",
+        "1",
+        "vr_workspace.tech_bar.raw_fraud_labels",
+        "2026-10-30T03:30:48.519Z"
+      ],
+      [
+        "H8060392294",
+        "2026-10-29T23:59:39.000Z",
+        "211.43",
+        "0.0",
+        "1",
+        "vr_workspace.tech_bar.raw_fraud_labels",
+        "2026-10-30T03:30:48.519Z"
+      ]
+    ]
+  }
+}

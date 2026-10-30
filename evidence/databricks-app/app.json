@@ -1,0 +1,124 @@
+{
+  "source": "databricks apps get dsml-portal; databricks apps list-deployments dsml-portal",
+  "app": {
+    "name": "dsml-portal",
+    "description": "Create and track ML projects from project templates",
+    "url": "https://dsml-portal-7474655075961307.aws.databricksapps.com",
+    "app_status": {
+      "message": "App has status: App is running",
+      "state": "RUNNING"
+    },
+    "compute_status": {
+      "message": "App compute is running.",
+      "state": "ACTIVE"
+    },
+    "compute_size": "MEDIUM",
+    "create_time": "2026-10-30T02:24:08Z",
+    "creator": "victor.rodrigues@databricks.com",
+    "service_principal_name": "app-2utvp5 dsml-portal",
+    "service_principal_client_id": "9edad942-060d-43f9-8793-1e7ac45acfad",
+    "oauth2_app_integration_id": "9bbf22ec-cd13-4937-88b4-355b31363fdf",
+    "user_api_scopes": [
+      "catalog.catalogs:read",
+      "catalog.schemas:read",
+      "postgres"
+    ],
+    "resources": [
+      {
+        "description": "GitHub token used for every GitHub API call",
+        "name": "github-token",
+        "secret": {
+          "key": "github-token",
+          "permission": "READ",
+          "scope": "dsml-portal"
+        }
+      },
+      {
+        "description": "Client ID of the CI/CD service principal",
+        "name": "sp-client-id",
+        "secret": {
+          "key": "sp-client-id",
+          "permission": "READ",
+          "scope": "mlops"
+        }
+      },
+      {
+        "description": "Client secret of the CI/CD service principal",
+        "name": "sp-client-secret",
+        "secret": {
+          "key": "sp-client-secret",
+          "permission": "READ",
+          "scope": "mlops"
+        }
+      },
+      {
+        "description": "Portal catalog (Lakebase)",
+        "name": "database",
+        "postgres": {
+          "branch": "projects/feature-store-online/branches/production",
+          "database": "projects/feature-store-online/branches/production/databases/db-c8j6-0ndxcy5qf7",
+          "permission": "CAN_CONNECT_AND_CREATE"
+        }
+      }
+    ],
+    "active_deployment": {
+      "deployment_id": "01f1d40aa2e21a29af9997c6d553ba83",
+      "mode": "SNAPSHOT",
+      "source_code_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/.bundle/dsml_portal/dev/files/app/build",
+      "status": {
+        "message": "App started successfully",
+        "state": "SUCCEEDED"
+      },
+      "create_time": "2026-10-30T02:35:57Z"
+    }
+  },
+  "deployments": [
+    {
+      "deployment_id": "01f1d40aa2e21a29af9997c6d553ba83",
+      "mode": "SNAPSHOT",
+      "source_code_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/.bundle/dsml_portal/dev/files/app/build",
+      "status": {
+        "message": "App started successfully",
+        "state": "SUCCEEDED"
+      },
+      "create_time": "2026-10-30T02:35:57Z",
+      "creator": "victor.rodrigues@databricks.com"
+    },
+    {
+      "deployment_id": "01f1d409606415f79be3c5fd3a8579c3",
+      "mode": "SNAPSHOT",
+      "source_code_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/.bundle/dsml_portal/dev/files/app/build",
+      "status": {
+        "message": "App started successfully",
+        "state": "SUCCEEDED"
+      },
+      "create_time": "2026-10-30T02:26:56Z",
+      "creator": "victor.rodrigues@databricks.com"
+    }
+  ],
+  "oauth_app_integration": {
+    "source": "databricks account custom-app-integration get <oauth2_app_integration_id> (scopes granted by scripts/grant_user_scopes.sh)",
+    "integration_id": "9bbf22ec-cd13-4937-88b4-355b31363fdf",
+    "name": "dsml-portal",
+    "scopes": [
+      "offline_access",
+      "email",
+      "postgres",
+      "iam.current-user:read",
+      "openid",
+      "catalog.schemas:read",
+      "iam.access-control:read",
+      "profile",
+      "catalog.catalogs:read",
+      "mlflow",
+      "unity-catalog",
+      "scim",
+      "all-apis"
+    ],
+    "user_authorized_scopes": [
+      "catalog.catalogs:read",
+      "catalog.schemas:read",
+      "postgres"
+    ]
+  }
+}

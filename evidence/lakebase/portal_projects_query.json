@@ -1,0 +1,61 @@
+{
+  "source": "databricks catalogs get dsml_portal; SQL on the Serverless SQL warehouse 854312e54074c4f7. The portal catalog database dsml_portal (Lakebase project feature-store-online, branch production) is registered in Unity Catalog as the read-only catalog dsml_portal by the dsml_portal_genie job.",
+  "catalog": {
+    "name": "dsml_portal",
+    "catalog_type": "MANAGED_ONLINE_CATALOG",
+    "options": {
+      "database": "dsml_portal"
+    },
+    "owner": "victor.rodrigues@databricks.com",
+    "created_at": "2026-10-30T03:36:05Z",
+    "provisioning_info": {
+      "state": "ACTIVE"
+    }
+  },
+  "query": {
+    "sql": "SELECT * FROM dsml_portal.portal.projects ORDER BY created_at",
+    "state": "SUCCEEDED",
+    "columns": [
+      "name",
+      "template",
+      "repo",
+      "creator",
+      "created_at",
+      "updated_at",
+      "status",
+      "error",
+      "params",
+      "prod_model"
+    ],
+    "rows": [
+      [
+        "databricks-tech-bar-fraud-project",
+        "Classification",
+        "vorodrigues/databricks-tech-bar-fraud-project",
+        "victor.rodrigues@databricks.com",
+        "2026-10-30T03:01:22.546Z",
+        "2026-10-30T03:01:37.522Z",
+        "ready",
+        null,
+        {
+          "catalog": "vr_workspace",
+          "dev_user": "victor.rodrigues@databricks.com",
+          "model_name": "tech_bar_fraud_model",
+          "schema_dev": "tech_bar_dev",
+          "bundle_name": "databricks_tech_bar_fraud_project",
+          "schema_prod": "tech_bar",
+          "online_store": "feature-store-online",
+          "root_path_dev": "/Workspace/Users/victor.rodrigues@databricks.com/databricks-tech-bar-fraud-project/dev",
+          "viewers_group": "ml-viewers",
+          "root_path_prod": "/Workspace/databricks-tech-bar-fraud-project/prod",
+          "schema_staging": "tech_bar_staging",
+          "workspace_host": "https://dbc-963f3995-3da2.cloud.databricks.com",
+          "experiment_name": "tech_bar_fraud_experiment",
+          "root_path_staging": "/Workspace/databricks-tech-bar-fraud-project/staging",
+          "service_principal": "6036593a-f1b6-49ee-aa6d-145161164de9"
+        },
+        "vr_workspace.tech_bar.tech_bar_fraud_model"
+      ]
+    ]
+  }
+}

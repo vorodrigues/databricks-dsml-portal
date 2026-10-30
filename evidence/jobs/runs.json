@@ -1,0 +1,452 @@
+[
+  {
+    "job_id": 669416297708009,
+    "run_id": 622643183755757,
+    "run_name": "prod_fraud_setup",
+    "creator_user_name": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "run_as": null,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1793330432769,
+    "end_time": 1793330560569,
+    "run_duration": 127800,
+    "job_parameters": [
+      {
+        "default": "/Volumes/vr_workspace/tech_bar/landing",
+        "name": "landing"
+      },
+      {
+        "default": "feature-store-online",
+        "name": "online_store"
+      },
+      {
+        "default": "6036593a-f1b6-49ee-aa6d-145161164de9,6036593a-f1b6-49ee-aa6d-145161164de9",
+        "name": "principals"
+      }
+    ],
+    "run_page_url": "https://dbc-963f3995-3da2.cloud.databricks.com/?o=7474655075961307#job/669416297708009/run/622643183755757",
+    "tasks": [
+      {
+        "task_key": "tag_policy",
+        "run_id": 506089748874747,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330432800,
+        "end_time": 1793330462334,
+        "execution_duration": 25000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/setup/notebooks/tag_policy",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "online_store",
+        "run_id": 614895700436738,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330432799,
+        "end_time": 1793330463710,
+        "execution_duration": 26000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/setup/notebooks/online_store",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "ingest",
+        "run_id": 632923422972773,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "depends_on": [
+          {
+            "task_key": "data"
+          }
+        ],
+        "start_time": 1793330488153,
+        "end_time": 1793330560334,
+        "execution_duration": 72000,
+        "setup_duration": 0,
+        "pipeline_task": {
+          "pipeline_id": "84f23740-51d0-4c92-a41f-ef1713e45309"
+        }
+      },
+      {
+        "task_key": "data",
+        "run_id": 164200081832598,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330432797,
+        "end_time": 1793330487793,
+        "execution_duration": 50000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/setup/notebooks/data",
+          "source": "WORKSPACE"
+        }
+      }
+    ]
+  },
+  {
+    "job_id": 343968601521557,
+    "run_id": 874169827000330,
+    "run_name": "prod_fraud_training",
+    "creator_user_name": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "run_as": null,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1793330586997,
+    "end_time": 1793330952971,
+    "run_duration": 365974,
+    "job_parameters": [
+      {
+        "default": "0.5",
+        "name": "min_auc"
+      },
+      {
+        "default": "fraud",
+        "name": "team"
+      },
+      {
+        "default": "365d",
+        "name": "retention"
+      },
+      {
+        "default": "vr_workspace",
+        "name": "catalog"
+      },
+      {
+        "default": "tech_bar",
+        "name": "schema"
+      },
+      {
+        "default": "feature-store-online",
+        "name": "online_store"
+      },
+      {
+        "default": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/tech_bar_fraud_experiment",
+        "name": "experiment"
+      },
+      {
+        "default": "vr_workspace.tech_bar.tech_bar_fraud_model",
+        "name": "model_name"
+      }
+    ],
+    "run_page_url": "https://dbc-963f3995-3da2.cloud.databricks.com/?o=7474655075961307#job/343968601521557/run/874169827000330",
+    "tasks": [
+      {
+        "task_key": "register",
+        "run_id": 577359816465499,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "depends_on": [
+          {
+            "outcome": "true",
+            "task_key": "quality_gate"
+          }
+        ],
+        "start_time": 1793330926042,
+        "end_time": 1793330952523,
+        "execution_duration": 24000,
+        "setup_duration": 2000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/register",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "feature_batch",
+        "run_id": 335787102080941,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330587023,
+        "end_time": 1793330856663,
+        "execution_duration": 265000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/feature_batch",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "feature_ondemand",
+        "run_id": 362209867413057,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330587025,
+        "end_time": 1793330625683,
+        "execution_duration": 34000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/feature_ondemand",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "train",
+        "run_id": 182102771012835,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "depends_on": [
+          {
+            "task_key": "feature_batch"
+          },
+          {
+            "task_key": "feature_ondemand"
+          }
+        ],
+        "start_time": 1793330857075,
+        "end_time": 1793330924093,
+        "execution_duration": 64000,
+        "setup_duration": 2000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/training/notebooks/train",
+          "source": "WORKSPACE"
+        }
+      },
+      {
+        "task_key": "quality_gate",
+        "run_id": 308458996904474,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "depends_on": [
+          {
+            "task_key": "train"
+          }
+        ],
+        "start_time": 1793330924457,
+        "end_time": 1793330925761,
+        "execution_duration": 1000,
+        "setup_duration": 0,
+        "condition_task": {
+          "left": "{{tasks.train.values.test_auc}}",
+          "op": "GREATER_THAN_OR_EQUAL",
+          "outcome": "true",
+          "right": "{{job.parameters.min_auc}}"
+        }
+      }
+    ]
+  },
+  {
+    "job_id": 1054413573032453,
+    "run_id": 353407243695613,
+    "run_name": "prod_fraud_batch_scoring",
+    "creator_user_name": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "run_as": null,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1793330976178,
+    "end_time": 1793331086946,
+    "run_duration": 110768,
+    "job_parameters": [
+      {
+        "default": "vr_workspace.tech_bar.raw_fraud_labels",
+        "name": "source_table"
+      },
+      {
+        "default": "vr_workspace",
+        "name": "catalog"
+      },
+      {
+        "default": "tech_bar",
+        "name": "schema"
+      },
+      {
+        "default": "vr_workspace.tech_bar.tech_bar_fraud_model",
+        "name": "model_name"
+      }
+    ],
+    "run_page_url": "https://dbc-963f3995-3da2.cloud.databricks.com/?o=7474655075961307#job/1054413573032453/run/353407243695613",
+    "tasks": [
+      {
+        "task_key": "score",
+        "run_id": 847380244453163,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793330976208,
+        "end_time": 1793331086578,
+        "execution_duration": 106000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/scoring/notebooks/batch_scoring",
+          "source": "WORKSPACE"
+        }
+      }
+    ]
+  },
+  {
+    "job_id": 742346376031832,
+    "run_id": 755720320337683,
+    "run_name": "prod_fraud_online_deploy",
+    "creator_user_name": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "run_as": null,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1793331109730,
+    "end_time": 1793331708285,
+    "run_duration": 598555,
+    "job_parameters": [
+      {
+        "default": "prod_fraud_serving",
+        "name": "endpoint_name"
+      },
+      {
+        "default": "vr_workspace.tech_bar.tech_bar_fraud_model",
+        "name": "model_name"
+      },
+      {
+        "default": "vr_workspace",
+        "name": "catalog"
+      },
+      {
+        "default": "tech_bar",
+        "name": "schema"
+      },
+      {
+        "default": "ml-viewers",
+        "name": "viewers_group"
+      }
+    ],
+    "run_page_url": "https://dbc-963f3995-3da2.cloud.databricks.com/?o=7474655075961307#job/742346376031832/run/755720320337683",
+    "tasks": [
+      {
+        "task_key": "deploy",
+        "run_id": 998477725909841,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793331109762,
+        "end_time": 1793331707878,
+        "execution_duration": 594000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/databricks-tech-bar-fraud-project/prod/files/serving/notebooks/online_deploy",
+          "source": "WORKSPACE"
+        }
+      }
+    ]
+  },
+  {
+    "job_id": 360018471114568,
+    "run_id": 936327720412149,
+    "run_name": "[dev victor_rodrigues] dsml_portal_genie",
+    "creator_user_name": "victor.rodrigues@databricks.com",
+    "run_as": null,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1793332682679,
+    "end_time": 1793332719584,
+    "run_duration": 36905,
+    "job_parameters": [
+      {
+        "default": "vr_workspace",
+        "name": "catalog"
+      },
+      {
+        "default": "tech_bar",
+        "name": "schema"
+      },
+      {
+        "default": "854312e54074c4f7",
+        "name": "warehouse_id"
+      },
+      {
+        "default": "projects/feature-store-online/branches/production",
+        "name": "lakebase_branch"
+      },
+      {
+        "default": "dsml_portal",
+        "name": "lakebase_database"
+      },
+      {
+        "default": "victor.rodrigues@databricks.com",
+        "name": "readers"
+      }
+    ],
+    "run_page_url": "https://dbc-963f3995-3da2.cloud.databricks.com/?o=7474655075961307#job/360018471114568/run/936327720412149",
+    "tasks": [
+      {
+        "task_key": "genie",
+        "run_id": 651643827004425,
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "start_time": 1793332682708,
+        "end_time": 1793332719163,
+        "execution_duration": 32000,
+        "setup_duration": 4000,
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/.bundle/dsml_portal/dev/files/genie/portal_genie",
+          "source": "WORKSPACE"
+        }
+      }
+    ]
+  }
+]

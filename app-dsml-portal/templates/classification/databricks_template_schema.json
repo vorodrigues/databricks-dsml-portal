@@ -1,0 +1,102 @@
+{
+  "welcome_message": "Classification: MLOps bundle (data, features, training, batch scoring and online serving) with dev, staging and prod targets and GitHub Actions CI/CD.",
+  "properties": {
+    "bundle_name": {
+      "type": "string",
+      "description": "Bundle name",
+      "default": "fraud_mlops",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "pattern_match_failure_message": "Use lowercase letters, digits and underscores, starting with a letter.",
+      "order": 1
+    },
+    "workspace_host": {
+      "type": "string",
+      "description": "Workspace host",
+      "default": "https://dbc-963f3995-3da2.cloud.databricks.com",
+      "order": 2
+    },
+    "catalog": {
+      "type": "string",
+      "description": "Unity Catalog catalog",
+      "default": "vr_workspace",
+      "order": 3
+    },
+    "schema_dev": {
+      "type": "string",
+      "description": "Unity Catalog schema of dev",
+      "default": "tech_bar_dev",
+      "order": 4
+    },
+    "schema_staging": {
+      "type": "string",
+      "description": "Unity Catalog schema of staging",
+      "default": "tech_bar_staging",
+      "order": 5
+    },
+    "schema_prod": {
+      "type": "string",
+      "description": "Unity Catalog schema of prod",
+      "default": "tech_bar",
+      "order": 6
+    },
+    "online_store": {
+      "type": "string",
+      "description": "Lakebase project of the online feature store",
+      "default": "feature-store-online",
+      "order": 7
+    },
+    "experiment_name": {
+      "type": "string",
+      "description": "Experiment name",
+      "default": "fraud_experiment",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "pattern_match_failure_message": "Use letters, digits, '.', '-' and '_', starting with a letter or digit.",
+      "order": 8
+    },
+    "model_name": {
+      "type": "string",
+      "description": "Registered model name",
+      "default": "fraud_model",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "pattern_match_failure_message": "Use lowercase letters, digits and underscores, starting with a letter.",
+      "order": 9
+    },
+    "root_path_dev": {
+      "type": "string",
+      "description": "Workspace root path of dev",
+      "default": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/fraud_mlops/dev",
+      "order": 10
+    },
+    "root_path_staging": {
+      "type": "string",
+      "description": "Workspace root path of staging",
+      "default": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/fraud_mlops/staging",
+      "order": 11
+    },
+    "root_path_prod": {
+      "type": "string",
+      "description": "Workspace root path of prod",
+      "default": "/Workspace/Users/victor.rodrigues@databricks.com/tech_bar/fraud_mlops/prod",
+      "order": 12
+    },
+    "service_principal": {
+      "type": "string",
+      "description": "Application ID of the CI/CD service principal (run_as of staging and prod)",
+      "default": "6036593a-f1b6-49ee-aa6d-145161164de9",
+      "order": 13
+    },
+    "viewers_group": {
+      "type": "string",
+      "description": "Group granted run and view permissions",
+      "default": "ml-viewers",
+      "order": 14
+    },
+    "dev_user": {
+      "type": "string",
+      "description": "Developer e-mail (run_as of dev)",
+      "default": "victor.rodrigues@databricks.com",
+      "order": 15
+    }
+  },
+  "success_message": "Bundle {{.bundle_name}} created."
+}

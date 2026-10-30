@@ -1,0 +1,62 @@
+# MLOps bundle of the PIX fraud model (MLOps Stacks layout)
+bundle:
+  name: {{.bundle_name}}
+
+include:
+  - resources/*.yml
+
+# One-off test code stays out of the deploy
+sync:
+  exclude:
+    - .DRAFTS
+
+variables:
+  catalog:
+    description: Unity Catalog catalog
+    default: {{.catalog}}
+  schema:
+    description: Unity Catalog schema of the target (pre-existing)
+  prefix:
+    description: Prefix of assets without a directory (jobs, endpoint)
+    default: ${bundle.target}
+  online_store:
+    description: Lakebase project of the online feature store (shared across targets)
+    default: {{.online_store}}
+  service_principal:
+    description: Application ID of the CI/CD service principal (run_as of staging/prod)
+    default: {{.service_principal}}
+  viewers_group:
+    description: Group with run/view permission
+    default: {{.viewers_group}}
+
+workspace:
+  host: {{.workspace_host}}
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      root_path: {{.root_path_dev}}
+    run_as:
+      user_name: {{.dev_user}}
+    variables:
+      schema: {{.schema_dev}}
+
+  staging:
+    mode: production
+    workspace:
+      root_path: {{.root_path_staging}}
+    run_as:
+      service_principal_name: ${var.service_principal}
+    variables:
+      schema: {{.schema_staging}}
+
+  prod:
+    mode: production
+    workspace:
+      root_path: {{.root_path_prod}}
+    run_as:
+      service_principal_name: ${var.service_principal}
+    variables:
+      schema: {{.schema_prod}}

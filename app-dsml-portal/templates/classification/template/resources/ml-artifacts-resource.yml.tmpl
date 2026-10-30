@@ -1,0 +1,12 @@
+# ML artifacts of the target: MLflow experiment and Unity Catalog registered model
+resources:
+  experiments:
+    fraud_experiment:
+      name: ${workspace.root_path}/{{.experiment_name}}
+
+  registered_models:
+    fraud_model:
+      name: {{.model_name}}
+      catalog_name: ${var.catalog}
+      schema_name: ${var.schema}
+      comment: PIX transaction fraud detection model

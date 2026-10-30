@@ -1,0 +1,129 @@
+{
+  "source": "Genie Conversation API (start-conversation, then the query result of the message attachment) on the Space 01f1d4155e9c14d0a6ea4024f1a6e241, one conversation per sample question",
+  "answers": [
+    {
+      "question": "Which projects are ready, and who created them?",
+      "status": "COMPLETED",
+      "conversation_id": "01f1d417f313108f8b621cdc322f539b",
+      "error": null,
+      "sql": "SELECT `name`, `creator`\nFROM `dsml_portal`.`portal`.`projects`\nWHERE `status` ILIKE '%ready%'\n  AND `name` IS NOT NULL\n  AND `creator` IS NOT NULL\nORDER BY `name` ASC",
+      "columns": [
+        "name",
+        "creator"
+      ],
+      "rows": [
+        [
+          "databricks-tech-bar-fraud-project",
+          "victor.rodrigues@databricks.com"
+        ]
+      ],
+      "text": "There is **1** ready project in the visible data: **databricks-tech-bar-fraud-project**, created by **victor.rodrigues@databricks.com**."
+    },
+    {
+      "question": "What is the test metric of the latest training run of each project?",
+      "status": "COMPLETED",
+      "conversation_id": "01f1d417f3131132b41cdeccf358af95",
+      "error": null,
+      "sql": "WITH project_runs AS (\n  SELECT\n    projects.`name` AS project_name,\n    runs_latest.`run_id` AS run_id,\n    runs_latest.`start_time` AS start_time,\n    metric.`latest_value` AS test_auc,\n    ROW_NUMBER() OVER (\n      PARTITION BY projects.`name`\n      ORDER BY runs_latest.`start_time` DESC, runs_latest.`update_time` DESC, runs_latest.`run_id` DESC\n    ) AS rn\n  FROM `dsml_portal`.`portal`.`projects` AS projects\n  INNER JOIN `system`.`mlflow`.`runs_latest` AS runs_latest\n    ON runs_latest.`workspace_id` = '7474655075961307'\n   AND projects.`name` IS NOT NULL\n   AND runs_latest.`run_name` = 'final_model'\n   AND runs_latest.`start_time` IS NOT NULL\n   AND runs_latest.`tags`['mlflow.databricks.notebookPath'] IS NOT NULL\n   AND runs_latest.`tags`['mlflow.databricks.notebookPath'] ILIKE CONCAT('%/', projects.`name`, '/%')\n  LATERAL VIEW EXPLODE(runs_latest.`aggregated_metrics`) exploded_metrics AS metric\n  WHERE metric.`metric_name` = 'test_auc'\n)\nSELECT\n  project_runs.project_name,\n  project_runs.run_id,\n  project_runs.start_time,\n  project_runs.test_auc\nFROM project_runs\nWHERE project_runs.rn = 1\nORDER BY project_runs.project_name",
+      "columns": [
+        "project_name",
+        "run_id",
+        "start_time",
+        "test_auc"
+      ],
+      "rows": [
+        [
+          "databricks-tech-bar-fraud-project",
+          "33532c22d9b442d4b0c1dbf74bb2eccc",
+          "2026-10-30T03:28:25.976Z",
+          "0.6960996351835935"
+        ]
+      ],
+      "text": "For project **databricks-tech-bar-fraud-project**, the latest training run is run ID **33532c22d9b442d4b0c1dbf74bb2eccc** with start time **2026-10-30T03:28:25.976Z**, and the test metric **test_auc** is **0.6960996351835935**. Based on the visible data, the result includes **1 project**, so the latest recorded test metric shown is **0.6960996351835935** for **databricks-tech-bar-fraud-project**."
+    },
+    {
+      "question": "What is the status of the latest run of each prod job of each project?",
+      "status": "COMPLETED",
+      "conversation_id": "01f1d417f3131163b17661c5deb47f7e",
+      "error": null,
+      "sql": "WITH `projects` AS (\n  SELECT `name`\n  FROM `dsml_portal`.`portal`.`projects`\n  WHERE `name` IS NOT NULL\n),\n`latest_jobs` AS (\n  SELECT\n    `workspace_id`,\n    `job_id`,\n    `name` AS `job_name`,\n    `deployment`.`metadata_file_path` AS `metadata_file_path`,\n    ROW_NUMBER() OVER (\n      PARTITION BY `workspace_id`, `job_id`\n      ORDER BY `change_time` DESC\n    ) AS `rn`\n  FROM `system`.`lakeflow`.`jobs`\n  WHERE `workspace_id` = '7474655075961307'\n    AND `delete_time` IS NULL\n    AND `job_id` IS NOT NULL\n    AND `change_time` IS NOT NULL\n    AND `name` IS NOT NULL\n    AND `name` IN ('prod_fraud_setup', 'prod_fraud_training', 'prod_fraud_batch_scoring', 'prod_fraud_online_deploy')\n),\n`project_jobs` AS (\n  SELECT\n    p.`name` AS `project_name`,\n    j.`workspace_id`,\n    j.`job_id`,\n    j.`job_name`\n  FROM `projects` p\n  JOIN `latest_jobs` j\n    ON j.`rn` = 1\n   AND j.`metadata_file_path` IS NOT NULL\n   AND j.`metadata_file_path` ILIKE CONCAT('%/', p.`name`, '/prod/%')\n),\n`dedup_runs` AS (\n  SELECT\n    `workspace_id`,\n    `job_id`,\n    `run_id`,\n    `period_start_time`,\n    `period_end_time`,\n    `result_state`,\n    ROW_NUMBER() OVER (\n      PARTITION BY `workspace_id`, `run_id`\n      ORDER BY `period_end_time` DESC\n    ) AS `rn`\n  FROM `system`.`lakeflow`.`job_run_timeline`\n  WHERE `workspace_id` = '7474655075961307'\n    AND `job_id` IS NOT NULL\n    AND `run_id` IS NOT NULL\n    AND `period_start_time` IS NOT NULL\n    AND `period_end_time` IS NOT NULL\n),\n`latest_run_per_job` AS (\n  SELECT\n    pj.`project_name`,\n    pj.`job_name`,\n    r.`run_id`,\n    r.`period_start_time`,\n    r.`period_end_time`,\n    r.`result_state`,\n    ROW_NUMBER() OVER (\n      PARTITION BY pj.`project_name`, pj.`job_id`\n      ORDER BY r.`period_start_time` DESC\n    ) AS `rn`\n  FROM `project_jobs` pj\n  LEFT JOIN `dedup_runs` r\n    ON pj.`workspace_id` = r.`workspace_id`\n   AND pj.`job_id` = r.`job_id`\n   AND r.`rn` = 1\n)\nSELECT\n  `project_name`,\n  `job_name`,\n  `run_id`,\n  `period_start_time` AS `latest_run_start_time`,\n  `period_end_time` AS `latest_run_end_time`,\n  CASE WHEN `result_state` IS NULL THEN 'IN_PROGRESS' ELSE `result_state` END AS `latest_run_status`\nFROM `latest_run_per_job`\nWHERE `rn` = 1\nORDER BY `project_name`, `job_name`;",
+      "columns": [
+        "project_name",
+        "job_name",
+        "run_id",
+        "latest_run_start_time",
+        "latest_run_end_time",
+        "latest_run_status"
+      ],
+      "rows": [
+        [
+          "databricks-tech-bar-fraud-project",
+          "prod_fraud_batch_scoring",
+          "353407243695613",
+          "2026-10-30T03:29:36.178Z",
+          "2026-10-30T03:31:26.946Z",
+          "SUCCEEDED"
+        ],
+        [
+          "databricks-tech-bar-fraud-project",
+          "prod_fraud_online_deploy",
+          "755720320337683",
+          "2026-10-30T03:31:49.730Z",
+          "2026-10-30T03:41:48.285Z",
+          "SUCCEEDED"
+        ],
+        [
+          "databricks-tech-bar-fraud-project",
+          "prod_fraud_setup",
+          "622643183755757",
+          "2026-10-30T03:20:32.769Z",
+          "2026-10-30T03:22:40.569Z",
+          "SUCCEEDED"
+        ],
+        [
+          "databricks-tech-bar-fraud-project",
+          "prod_fraud_training",
+          "874169827000330",
+          "2026-10-30T03:23:06.997Z",
+          "2026-10-30T03:29:12.971Z",
+          "SUCCEEDED"
+        ]
+      ],
+      "text": "For **databricks-tech-bar-fraud-project**, the latest run of **every prod job** shown is **SUCCEEDED**. The four prod jobs are **prod_fraud_setup**, **prod_fraud_training**, **prod_fraud_batch_scoring**, and **prod_fraud_online_deploy**; the latest run started between **03:20 UTC** and **03:31 UTC** on **2026-10-30**, and all completed successfully."
+    },
+    {
+      "question": "How many transactions did the latest batch scoring classify as fraud?",
+      "status": "COMPLETED",
+      "conversation_id": "01f1d417f31310bb9ea650083722dd7c",
+      "error": null,
+      "sql": "WITH `latest_batch` AS (\n  SELECT MAX(`scored_at`) AS `max_scored_at`\n  FROM `vr_workspace`.`tech_bar`.`fraud_batch_predictions`\n)\nSELECT COUNT(*) AS `fraud_transaction_count`\nFROM `vr_workspace`.`tech_bar`.`fraud_batch_predictions` AS `p`\nCROSS JOIN `latest_batch` AS `lb`\nWHERE `p`.`scored_at` = `lb`.`max_scored_at`\n  AND `p`.`prediction` = 1",
+      "columns": [
+        "fraud_transaction_count"
+      ],
+      "rows": [
+        [
+          "43054"
+        ]
+      ],
+      "text": "The latest batch scoring classified **43,054 transactions** as fraud, based on rows with the most recent `scored_at` value and `prediction = 1`. Since the result contains **1 row**, this is the total fraud count for the latest batch scoring snapshot returned by the data."
+    },
+    {
+      "question": "What is the daily request volume of the serving endpoint?",
+      "status": "COMPLETED",
+      "conversation_id": "01f1d417f31311c98050a0463cd24143",
+      "error": null,
+      "sql": "SELECT `request_date`, COUNT(*) AS `request_volume`\nFROM `vr_workspace`.`tech_bar`.`fraud_serving_inference_payload`\nWHERE `request_date` IS NOT NULL\nGROUP BY `request_date`\nORDER BY `request_date`",
+      "columns": [
+        "request_date",
+        "request_volume"
+      ],
+      "rows": [
+        [
+          "2026-10-30",
+          "1"
+        ]
+      ],
+      "text": "The serving endpoint had **1** request on **2026-10-30**. Based on the visible data, **2026-10-30** is the only date shown and its daily request volume is **1**."
+    }
+  ]
+}

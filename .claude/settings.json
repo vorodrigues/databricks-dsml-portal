@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Agent(orchestrator:evaluator)",
+      "Agent(orchestrator:generator)",
+      "Bash(caffeinate *)",
+      "Bash(databricks *)",
+      "Bash(jq *)",
+      "Bash(python3 *gmail_builder.py auth-status*)",
+      "Bash(python3 *gmail_builder.py create-draft *)",
+      "Bash(python3 *gmail_builder.py send *)",
+      "Bash(python3 *google_auth.py status)",
+      "Bash(python3 *google_auth.py token)",
+      "Bash(rg *)",
+      "Edit(./obsidian/**)",
+      "Skill(gmail)",
+      "Skill(obsidian-markdown)",
+      "WebFetch(domain:docs.cloud.google.com)",
+      "WebFetch(domain:docs.databricks.com)",
+      "WebFetch(domain:learn.microsoft.com)",
+      "WebSearch",
+      "Write(./obsidian/**)"
+    ],
+    "ask": [
+      "Edit(./obsidian/*/0-wikis/**)",
+      "Write(./obsidian/*/0-wikis/**)"
+    ],
+    "deny": [
+      "Bash(python3 *gmail_builder.py delete-filter *)",
+      "Bash(python3 *gmail_builder.py empty-trash*)",
+      "Bash(python3 *gmail_builder.py trash *)",
+      "Bash(rm -rf *)",
+      "Edit(./obsidian/*/9-admin/**)",
+      "Write(./obsidian/*/9-admin/**)"
+    ]
+  }
+}

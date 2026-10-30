@@ -1,0 +1,63 @@
+{
+  "source": "SQL statements on the Serverless SQL warehouse 854312e54074c4f7 (prod schema vr_workspace.tech_bar)",
+  "queries": [
+    {
+      "sql": "SELECT 'bronze_pix_transactions' AS table_name, count(*) AS row_count FROM vr_workspace.tech_bar.bronze_pix_transactions UNION ALL SELECT 'raw_pix_transactions', count(*) FROM vr_workspace.tech_bar.raw_pix_transactions UNION ALL SELECT 'bronze_fraud_labels', count(*) FROM vr_workspace.tech_bar.bronze_fraud_labels UNION ALL SELECT 'raw_fraud_labels', count(*) FROM vr_workspace.tech_bar.raw_fraud_labels",
+      "state": "SUCCEEDED",
+      "columns": [
+        "table_name",
+        "row_count"
+      ],
+      "rows": [
+        [
+          "raw_pix_transactions",
+          "1000000"
+        ],
+        [
+          "raw_fraud_labels",
+          "100000"
+        ],
+        [
+          "bronze_pix_transactions",
+          "1000000"
+        ],
+        [
+          "bronze_fraud_labels",
+          "100000"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT count(DISTINCT holder_id) AS holders, min(created_at_brt) AS min_created_at_brt, max(created_at_brt) AS max_created_at_brt FROM vr_workspace.tech_bar.raw_pix_transactions",
+      "state": "SUCCEEDED",
+      "columns": [
+        "holders",
+        "min_created_at_brt",
+        "max_created_at_brt"
+      ],
+      "rows": [
+        [
+          "10000",
+          "2026-09-15T00:00:08.000Z",
+          "2026-10-29T23:59:58.000Z"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT count(*) AS labels, sum(label) AS frauds, round(avg(label)*100,3) AS fraud_pct FROM vr_workspace.tech_bar.raw_fraud_labels",
+      "state": "SUCCEEDED",
+      "columns": [
+        "labels",
+        "frauds",
+        "fraud_pct"
+      ],
+      "rows": [
+        [
+          "100000",
+          "5007",
+          "5.007"
+        ]
+      ]
+    }
+  ]
+}

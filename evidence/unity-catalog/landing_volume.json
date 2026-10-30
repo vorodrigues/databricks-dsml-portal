@@ -1,0 +1,69 @@
+{
+  "source": "databricks volumes read vr_workspace.tech_bar.landing; the files are listed from the source_file column that Auto Loader records in the bronze tables (the volume is readable only by the service principal that owns it)",
+  "volume": {
+    "full_name": "vr_workspace.tech_bar.landing",
+    "catalog_name": "vr_workspace",
+    "schema_name": "tech_bar",
+    "name": "landing",
+    "volume_type": "MANAGED",
+    "owner": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "created_by": "6036593a-f1b6-49ee-aa6d-145161164de9",
+    "created_at": "2026-10-30T03:19:57Z"
+  },
+  "ingested_files": {
+    "sql": "SELECT 'bronze_pix_transactions' AS table_name, source_file, count(*) AS row_count FROM vr_workspace.tech_bar.bronze_pix_transactions GROUP BY source_file UNION ALL SELECT 'bronze_fraud_labels', source_file, count(*) FROM vr_workspace.tech_bar.bronze_fraud_labels GROUP BY source_file ORDER BY 1, 2",
+    "state": "SUCCEEDED",
+    "columns": [
+      "table_name",
+      "source_file",
+      "row_count"
+    ],
+    "rows": [
+      [
+        "bronze_fraud_labels",
+        "/Volumes/vr_workspace/tech_bar/landing/fraud_labels/part-00000-tid-3784173198876855908-92e5752b-d647-40cd-91c6-24586a4e860d-178-1-c000.json",
+        "100000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00000-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-128-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00001-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-129-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00002-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-132-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00003-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-130-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00004-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-133-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00005-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-134-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00006-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-131-1-c000.json",
+        "125000"
+      ],
+      [
+        "bronze_pix_transactions",
+        "/Volumes/vr_workspace/tech_bar/landing/pix_transactions/part-00007-tid-3871826061381886474-6702be6c-4249-412a-9d23-a9dc6552fc2e-135-1-c000.json",
+        "125000"
+      ]
+    ]
+  }
+}
